@@ -75,16 +75,16 @@ const Footer = () => {
             </p>
             <div className="text-[#FFFFFFB2] text-2xl hidden md:flex gap-4">
               <Link>
-                <AiOutlineInstagram></AiOutlineInstagram>
+                <AiOutlineInstagram />
               </Link>
               <Link>
-                <AiFillFacebook></AiFillFacebook>
+                <AiFillFacebook />
               </Link>
               <Link>
-                <AiOutlineTwitter></AiOutlineTwitter>
+                <AiOutlineTwitter />
               </Link>
               <Link>
-                <AiFillLinkedin></AiFillLinkedin>
+                <AiFillLinkedin />
               </Link>
             </div>
           </div>
