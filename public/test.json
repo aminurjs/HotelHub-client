@@ -1,0 +1,42 @@
+[
+  {
+    "id": 101,
+    "review": "My stay was absolutely fantastic! The room was impeccably clean and incredibly comfortable, and the staff was exceptionally friendly and attentive. I felt right at home from the moment I arrived. I can't wait to come back and experience the hotel's hospitality again.",
+    "rating": 5,
+    "name": "Alice Johnson",
+    "travel_date": "July 15, 2023",
+    "photo": "https://i.ibb.co/fqHX6L4/1.jpg"
+  },
+  {
+    "id": 102,
+    "review": "I had a great experience during my stay at this hotel! The location was perfect, right in the heart of the city, and the amenities were top-notch. From the spacious room to the delicious breakfast, I enjoyed every moment of my stay.",
+    "rating": 4,
+    "name": "John Smith",
+    "travel_date": "June 5, 2023",
+    "photo": "https://i.ibb.co/12Gy6pC/4.jpg"
+  },
+  {
+    "id": 103,
+    "review": "My stay was an absolute delight! The room featured a breathtaking view, and the hotel's staff went above and beyond to make my stay unforgettable. I couldn't have asked for a better experience.",
+    "rating": 5,
+    "name": "Sarah Parker",
+    "travel_date": "August 22, 2023",
+    "photo": "https://i.ibb.co/ph6X9G1/3.jpg"
+  },
+  {
+    "id": 104,
+    "review": "I was thoroughly impressed by my stay at this hotel. The service was nothing short of exceptional, and the room was meticulously clean and inviting. I'm eagerly looking forward to returning for another wonderful stay.",
+    "rating": 5,
+    "name": "Michael Davis",
+    "travel_date": "July 30, 2023",
+    "photo": "https://i.ibb.co/FwsTfQm/5.jpg"
+  },
+  {
+    "id": 105,
+    "review": "My stay was an absolute delight! The hotel's location was incredibly convenient for exploring the city, and the facilities were well-maintained. The level of comfort and service I experienced made it a memorable trip.",
+    "rating": 4,
+    "name": "Emily Turner",
+    "travel_date": "June 10, 2023",
+    "photo": "https://i.ibb.co/0GgNTd0/2.jpg"
+  }
+]
