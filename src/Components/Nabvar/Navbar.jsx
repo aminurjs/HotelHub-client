@@ -35,10 +35,10 @@ const Navbar = () => {
         <div className="flex-1 px-2 mx-2">
           <Link
             to={"/"}
-            className="flex gap-3 text-3xl text-dark-01 font-bold items-center"
+            className="flex gap-3 text-2xl text-dark-01 font-bold items-center"
           >
             <img
-              className="w-10"
+              className="w-8"
               src="https://i.ibb.co/8DkV3v1/logo-h.png"
               alt=""
             />

@@ -17,10 +17,10 @@ const Footer = () => {
             <div className="col-span-2 md:col-span-3 lg:col-span-2">
               <Link
                 to={"/"}
-                className="flex text-white gap-3 text-3xl font-bold items-center"
+                className="flex text-white gap-3 text-2xl font-bold items-center"
               >
                 <img
-                  className="w-10"
+                  className="w-8"
                   src="https://i.ibb.co/8DkV3v1/logo-h.png"
                   alt=""
                 />
@@ -55,17 +55,17 @@ const Footer = () => {
               </h3>
               <a
                 href=""
-                className="text-[#FFFFFFB2] mb-6 text-sm flex items-center gap-2"
+                className="text-[#FFFFFFB2] mb-3 text-sm flex items-center gap-2"
               >
-                <FaLocationDot className="text-xl text-dark-03" />
-                {"Cox's"} Bazar City in Bangladesh
+                <BsFillEnvelopeAtFill className="text-lg text-dark-03" />
+                noreply@aminur.com
               </a>
               <a
                 href=""
                 className="text-[#FFFFFFB2] mb-6 text-sm flex items-center gap-2"
               >
-                <BsFillEnvelopeAtFill className="text-lg text-dark-03" />
-                noreply@aminur.com
+                <FaLocationDot className="text-xl text-dark-03" />
+                {"Cox's"} Bazar City in Bangladesh
               </a>
             </div>
           </div>
