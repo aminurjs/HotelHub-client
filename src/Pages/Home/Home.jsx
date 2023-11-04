@@ -1,5 +1,11 @@
+import Testimonials from "../../Components/Testimonials/Testimonials";
+
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Testimonials />
+    </div>
+  );
 };
 
 export default Home;
