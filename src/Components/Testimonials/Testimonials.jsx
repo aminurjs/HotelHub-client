@@ -18,8 +18,8 @@ const Testimonials = () => {
     photo: "https://i.ibb.co/2WCngSs/1-1.jpg",
   };
   return (
-    <div className="max-w-7xl mx-auto bg-base-300 rounded-lg p-4">
-      <div className=" bg-white rounded-lg p-10 flex items-center gap-10">
+    <div className="max-w-7xl mx-auto bg-dark-03 p-1 my-20">
+      <div className=" bg-white p-10 flex items-center gap-10">
         <div className="w-1/3">
           <h3 className="text-dark-03 tracking-[5px] mb-3">TESTIMONIALS</h3>
           <h2 className="text-dark-01 text-4xl font-medium mb-2">
