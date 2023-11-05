@@ -11,7 +11,7 @@ const Sidebar = () => {
       <h3 className="text-xl font-medium text-dark-01 mb-5"> Menu</h3>
       {navLink.map((menu) => (
         <li
-          className="mr-5 text-dark-01 hover:text-dark-03 hover:underline"
+          className="mb-3 text-dark-01 hover:text-dark-03 hover:underline"
           key={menu.id}
         >
           <NavLink className="" to={menu.path}>
