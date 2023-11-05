@@ -1,53 +1,55 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   //   const navigate = useNavigate();
+  const { googleLogin, login } = useAuth();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+
+    const toastId = toast.loading("Logging in ...");
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
 
-    // if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/.test(password)) {
-    //   setPassError(
-    //     " Password should have at least  6 characters including one uppercase letter, and one special character!"
-    //   );
-    //   return;
-    // }
+    if (password.length < 6) {
+      toast.error(" Password should have at least  6 characters", {
+        id: toastId,
+      });
+      return;
+    }
 
-    // createUser(email, password)
-    //   .then((result) => {
-    //     console.log(result.user);
-    //     updateUser(name, image).then(() => {
-    //       // Profile updated!
-    //       swal("Good job!", "Successfully Registered!", "success");
-    //       navigate("/");
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     setPassError(err.message);
-    //   });
+    login(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Successfully Logged in!!", { id: toastId });
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err.message, { id: toastId });
+      });
   };
 
-  //   const handleGoogleLogin = () => {
-  //     setPassError("");
-  //     googleLogin()
-  //       .then((result) => {
-  //         console.log(result.user);
-  //         swal("Good job!", "Successfully Logged in!", "success");
-  //         navigate(location?.state ? location.state : "/");
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   };
+  const handleGoogleLogin = () => {
+    const toastId = toast.loading("Logging in ...");
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Successfully Logged in!", { id: toastId });
+        // navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err.message, { id: toastId });
+      });
+  };
 
   return (
     <div className="bg-transparent ">
@@ -103,7 +105,10 @@ const Login = () => {
             </p>
             <div className="w-full h-[1px] bg-stone-300"></div>
             <div className="text-center mt-8 w-4/5 lg:w-3/5 mx-auto">
-              <button className="block w-full p-2 border-2 border-dark-03  text-dark-03 font-medium rounded-lg mb-5">
+              <button
+                onClick={handleGoogleLogin}
+                className="block w-full p-2 border-2 border-dark-03  text-dark-03 font-medium rounded-lg mb-5"
+              >
                 <FcGoogle className="inline text-2xl mr-2"></FcGoogle>
                 Continue with Google
               </button>
