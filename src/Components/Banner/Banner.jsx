@@ -4,18 +4,18 @@ const Banner = () => {
       <div className="bg-gradient-to-r from-dark-01">
         <div className="bg-dark-01 bg-opacity-30 py-36">
           <div className="max-w-7xl mx-auto my-10 px-5 lg:px-0">
-            <h2 className="text-lg md:text-2xl text-white dark:text-gray-200 font-medium  mb-4">
+            <h2 className="text-lg md:text-2xl text-white  font-medium  mb-4">
               Exclusive Hotel Deals
             </h2>
-            <h1 className="text-4xl md:text-6xl text-white dark:text-gray-200 font-bold  mb-5">
+            <h1 className="text-4xl md:text-6xl text-white  font-bold  mb-5">
               Discover Your Dream Destinations
             </h1>
-            <p className="text-sm md:text-lg text-gray-100 dark:text-gray-300  max-w-3xl mb-4">
+            <p className="text-sm md:text-lg text-gray-100 max-w-3xl mb-4">
               Experience travel your way. We offer personalized recommendations
               and accommodations to suit your preferences, ensuring every trip
               is uniquely yours.
             </p>
-            <h2 className=" text-white dark:text-gray-200 font-medium  mb-8">
+            <h2 className=" text-white  font-medium  mb-8">
               Explore. Book. Experience.
             </h2>
             <div>

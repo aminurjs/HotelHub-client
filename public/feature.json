@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/S0wxMM3/04-4.jpg",
+    "title": "Deluxe Ocean View Suite",
+    "price": 199,
+    "description": "Indulge in luxury with our Deluxe Ocean View Suite. Enjoy breathtaking views of the sea, spacious accommodations, and all the amenities you need for a relaxing stay.",
+    "capacity": "2 guests",
+    "size": "550 sq. ft."
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/vhT7BNT/37-6.jpg",
+    "title": "Cozy Mountain Retreat",
+    "price": 149,
+    "description": "Experience the charm of the mountains in our Cozy Mountain Retreat. Cozy up by the fireplace, explore scenic trails, and make the most of your mountain escape.",
+    "capacity": "4 guests",
+    "size": "750 sq. ft."
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/bJDmwSv/34-6.jpg",
+    "title": "City Center Studio",
+    "price": 129,
+    "description": "Stay in the heart of the city with our City Center Studio. Walk to popular attractions, dine at nearby restaurants, and immerse yourself in the urban buzz of the city.",
+    "capacity": "2 guests",
+    "size": "400 sq. ft."
+  }
+]
