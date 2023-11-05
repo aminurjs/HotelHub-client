@@ -16,6 +16,7 @@
     "react-icons": "^4.11.0",
     "react-prop-types": "^0.4.0",
     "react-rating": "^2.0.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.18.0",
     "swiper": "^11.0.3"
   },

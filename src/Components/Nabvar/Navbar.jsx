@@ -9,7 +9,7 @@ const Navbar = () => {
     { id: "3", name: "My Bookings", path: "/bookings" },
   ];
   return (
-    <div className="w-full  bg-base-200 shadow">
+    <div className="w-full py-3  bg-base-200 shadow">
       <div className="max-w-7xl mx-auto navbar">
         <div className="flex-none lg:hidden">
           <label
@@ -35,11 +35,11 @@ const Navbar = () => {
         <div className="flex-1 px-2 mx-2">
           <Link
             to={"/"}
-            className="flex gap-3 text-2xl text-dark-01 font-bold items-center"
+            className="flex gap-3 text-3xl text-dark-01 font-bold items-center"
           >
             <img
-              className="w-8"
-              src="https://i.ibb.co/8DkV3v1/logo-h.png"
+              className="w-10"
+              src="https://i.ibb.co/3vFNj7J/logo.png"
               alt=""
             />
             HotelHub
@@ -85,7 +85,11 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <button className="btn btn-sm btn-primary">Login</button>
+          <Link to={"/login"}>
+            <button className="py-1.5 px-6 text-white bg-dark-03 rounded">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
     </div>

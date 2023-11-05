@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Rating from "react-rating";
 import "swiper/css";
@@ -23,9 +22,10 @@ const Testimonials = () => {
       <div className=" bg-white rounded-lg p-10 flex items-center gap-10">
         <div className="w-1/3">
           <h3 className="text-dark-03 tracking-[5px] mb-3">TESTIMONIALS</h3>
-          <h2 className="text-dark-01 text-4xl font-medium mb-4">
+          <h2 className="text-dark-01 text-4xl font-medium mb-2">
             Our Clients Reviews
           </h2>
+          <div className="w-20 h-1.5 bg-dark-03 mb-5 ml-2"></div>
           <p className="text-dark-02">
             Real Stories, Memorable Stays: Hear What Our Guests Have to Say
             About Their Unforgettable Hotel Experiences

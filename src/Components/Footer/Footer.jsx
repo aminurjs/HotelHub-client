@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BsFillEnvelopeAtFill } from "react-icons/bs";
+import { BsFillEnvelopeAtFill, BsFillTelephoneFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import {
   AiFillFacebook,
@@ -17,11 +17,11 @@ const Footer = () => {
             <div className="col-span-2 md:col-span-3 lg:col-span-2">
               <Link
                 to={"/"}
-                className="flex text-white gap-3 text-2xl font-bold items-center"
+                className="flex text-white gap-3 text-3xl font-bold items-center"
               >
                 <img
-                  className="w-8"
-                  src="https://i.ibb.co/8DkV3v1/logo-h.png"
+                  className="w-10"
+                  src="https://i.ibb.co/3vFNj7J/logo.png"
                   alt=""
                 />
                 HotelHub
@@ -59,6 +59,13 @@ const Footer = () => {
               >
                 <BsFillEnvelopeAtFill className="text-lg text-dark-03" />
                 noreply@aminur.com
+              </a>
+              <a
+                href=""
+                className="text-[#FFFFFFB2] mb-3 text-sm flex items-center gap-2"
+              >
+                <BsFillTelephoneFill className="text-lg text-dark-03" />
+                1111-2222-3333
               </a>
               <a
                 href=""

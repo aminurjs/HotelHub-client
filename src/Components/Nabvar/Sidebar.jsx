@@ -7,7 +7,8 @@ const Sidebar = () => {
     { id: "3", name: "My Bookings", path: "/bookings" },
   ];
   return (
-    <>
+    <div>
+      <h3 className="text-xl font-medium text-dark-01 mb-5"> Menu</h3>
       {navLink.map((menu) => (
         <li
           className="mr-5 text-dark-01 hover:text-dark-03 hover:underline"
@@ -18,7 +19,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
       ))}
-    </>
+    </div>
   );
 };
 

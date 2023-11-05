@@ -65,7 +65,7 @@ const Login = () => {
             </h1>
             <p className="text-center text-sm text-gray-600  mb-3">
               Already have an account?
-              <Link className="text-dark-03" to={"/register"}>
+              <Link className="text-dark-03 ml-2" to={"/register"}>
                 Go Register!
               </Link>
             </p>
@@ -103,7 +103,7 @@ const Login = () => {
             </p>
             <div className="w-full h-[1px] bg-stone-300"></div>
             <div className="text-center mt-8 w-4/5 lg:w-3/5 mx-auto">
-              <button className="block w-full p-2 border-2 border-dark-01  text-dark-01 font-medium rounded-lg mb-5">
+              <button className="block w-full p-2 border-2 border-dark-03  text-dark-03 font-medium rounded-lg mb-5">
                 <FcGoogle className="inline text-2xl mr-2"></FcGoogle>
                 Continue with Google
               </button>
