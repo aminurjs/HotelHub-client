@@ -57,7 +57,7 @@ const Login = () => {
             <h2 className="text-3xl text-dark-01  font-semibold mb-8 border-l-8 border-dark-03 pl-3">
               Welcome to HotelHub
             </h2>
-            <img src="https://i.ibb.co/c6szCTM/Frame.png" alt="" />
+            <img src="https://i.ibb.co/Z2VMjFJ/Frame-1.png" alt="" />
           </div>
           <div className=" w-full md:w-1/2 md:pl-10 md:border-l border-gray-300">
             <h1 className="text-2xl text-dark-01  font-semibold text-center mb-2">

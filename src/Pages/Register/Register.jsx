@@ -2,26 +2,31 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { name } = useAuth();
   //   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
+
+    const toastId = toast.loading("Logging in ...");
     const form = new FormData(e.currentTarget);
-    const name = form.get("name");
+    const name1 = form.get("name");
     const email = form.get("email");
     const image = form.get("image");
     const password = form.get("password");
-    console.log(name, email, image, password);
+    console.log(name1, email, image, password, name);
 
-    // if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/.test(password)) {
-    //   setPassError(
-    //     " Password should have at least  6 characters including one uppercase letter, and one special character!"
-    //   );
-    //   return;
-    // }
+    if (password.length < 6) {
+      toast.error(" Password should have at least  6 characters", {
+        id: toastId,
+      });
+      return;
+    }
 
     // createUser(email, password)
     //   .then((result) => {
@@ -56,10 +61,13 @@ const Register = () => {
       <div className="max-w-7xl mx-auto p-10">
         <div className="bg-white  rounded shadow p-10 flex items-center border border-gray-200">
           <div className="w-1/2 hidden md:block pr-10">
+            <div>
+              <Toaster position="top-center" reverseOrder={false} />
+            </div>
             <h2 className="text-3xl text-dark-01  font-semibold mb-8 border-l-8 border-dark-03 pl-3">
               Welcome to HotelHub
             </h2>
-            <img src="https://i.ibb.co/c6szCTM/Frame.png" alt="" />
+            <img src="https://i.ibb.co/Z2VMjFJ/Frame-1.png" alt="" />
           </div>
           <div className=" w-full md:w-1/2 md:pl-10 md:border-l border-gray-300">
             <h1 className="text-2xl text-dark-01  font-semibold text-center mb-2">

@@ -86,7 +86,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={"/login"}>
-            <button className="py-1.5 px-6 text-white bg-dark-03 rounded">
+            <button className="py-1.5 px-6 text-white bg-dark-03 rounded active:scale-95">
               Login
             </button>
           </Link>
