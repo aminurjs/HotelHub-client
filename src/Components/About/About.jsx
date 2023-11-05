@@ -3,7 +3,7 @@ import { RiHotelFill } from "react-icons/ri";
 
 const About = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-20 mb-28 flex gap-12">
+    <div className="max-w-7xl mx-auto mt-20 mb-28 flex gap-12 py-16">
       <div className="border border-dark-03 p-3 relative lg:w-1/2 mr-3">
         <img src="https://i.ibb.co/9gzVfBt/over-water-villas.jpg" alt="" />
         <div className="absolute -bottom-10 -right-10 w-80 p-3 bg-white">
