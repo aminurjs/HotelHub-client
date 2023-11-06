@@ -1,0 +1,13 @@
+.room:hover .room-title {
+  bottom: -150px;
+  transition: all 0.7s;
+}
+.room-content {
+  left: -100%;
+  transition: all 0.7s;
+  width: 90%;
+}
+.room:hover .room-content {
+  left: 0;
+  top: 0;
+}

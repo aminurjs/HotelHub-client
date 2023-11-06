@@ -34,7 +34,7 @@ const Gallery = () => {
             alt="Image 4"
           />
         </div>
-        <div className="row-span-2 overflow-hidden">
+        <div className=" overflow-hidden">
           <img
             className="hover:scale-125 duration-1000"
             src="https://i.ibb.co/1KXB7P9/sidekix-media-g51-F6-WYzy-U-unsplash-1-768x512.jpg"

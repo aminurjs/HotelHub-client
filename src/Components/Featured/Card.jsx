@@ -23,12 +23,15 @@ const Card = ({ card }) => {
           </p>
         </div>
         <p className="text-dark-02 mb-4">
-          {card?.description?.length > 100
+          {card?.description?.length > 120
             ? `${card.description.slice(0, 120)} ...`
             : card.description}
         </p>
         <button className="py-3 px-10 text-white bg-dark-03 rounded active:scale-95">
           Book Now
+        </button>
+        <button className="py-3 px-10 text-dark-03 font-medium ml-2 bg-transparent border border-dark-03 rounded active:scale-95">
+          View Details
         </button>
       </div>
     </div>
