@@ -1,0 +1,201 @@
+[
+  {
+    "id": 1,
+    "title": "Cozy Single Room",
+    "price": 80,
+    "size": "200 sq ft",
+    "room_description": "Our cozy single room is perfect for solo travelers. It features a comfortable bed and a small workspace for your convenience.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Mini Fridge",
+      "En-suite Bathroom"
+    ],
+    "type": "Single",
+    "availability": true,
+    "image": "https://i.ibb.co/k8bCtRt/10.jpg",
+    "special_offer": "Get 10% off for bookings made 7 days in advance."
+  },
+  {
+    "id": 2,
+    "title": "Deluxe Double Room",
+    "price": 150,
+    "size": "350 sq ft",
+    "room_description": "Our deluxe double room is a spacious and comfortable option for couples. It includes a large bed and a sitting area for relaxation.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Flat-screen TV",
+      "Balcony with City View"
+    ],
+    "type": "Double",
+    "availability": true,
+    "image": "https://i.ibb.co/fnL1NRh/9.jpg",
+    "special_offer": "Free breakfast included for all bookings."
+  },
+  {
+    "id": 3,
+    "title": "Luxury Suite",
+    "price": 250,
+    "size": "600 sq ft",
+    "room_description": "Indulge in luxury with our spacious suite. It features a separate living area, a king-sized bed, and a private whirlpool bath.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Kitchenette",
+      "Whirlpool Bath"
+    ],
+    "type": "Suite",
+    "availability": false,
+    "image": "https://i.ibb.co/6rBp4Sp/7.jpg",
+    "special_offer": ""
+  },
+  {
+    "id": 4,
+    "title": "Family Room",
+    "price": 200,
+    "size": "450 sq ft",
+    "room_description": "Our family room is perfect for a family of four. It includes two separate bedrooms, a common living area, and a kitchenette.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Kitchenette",
+      "Two Bedrooms"
+    ],
+    "type": "Family",
+    "availability": true,
+    "image": "https://i.ibb.co/mT0ZwyY/8.jpg",
+    "special_offer": "Stay 3 nights or more and get a 15% discount."
+  },
+  {
+    "id": 5,
+    "title": "Standard Twin Room",
+    "price": 120,
+    "size": "250 sq ft",
+    "room_description": "Our standard twin room is perfect for friends or colleagues traveling together. It includes two single beds and a workspace.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Workspace",
+      "En-suite Bathroom"
+    ],
+    "type": "Twin",
+    "availability": true,
+    "image": "https://i.ibb.co/56Z0Sz1/12.jpg",
+    "special_offer": ""
+  },
+  {
+    "id": 6,
+    "title": "Executive Suite",
+    "price": 300,
+    "size": "700 sq ft",
+    "room_description": "Experience luxury and comfort in our executive suite. It features a private balcony, a king-sized bed, and a spacious living area.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Balcony",
+      "King-sized Bed"
+    ],
+    "type": "Suite",
+    "availability": true,
+    "image": "https://i.ibb.co/KsN50fD/6.jpg",
+    "special_offer": "Complimentary bottle of champagne upon arrival."
+  },
+  {
+    "id": 7,
+    "title": "Economy Single Room",
+    "price": 60,
+    "size": "180 sq ft",
+    "room_description": "Our economy single room is a budget-friendly option for solo travelers. It features a comfortable bed and basic amenities.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "En-suite Bathroom",
+      "TV"
+    ],
+    "type": "Single",
+    "availability": true,
+    "image": "https://i.ibb.co/nCWFpN6/13.jpg",
+    "special_offer": "10% off for stays longer than 5 nights."
+  },
+  {
+    "id": 8,
+    "title": "Ocean View Double Room",
+    "price": 180,
+    "size": "400 sq ft",
+    "room_description": "Enjoy stunning ocean views in our double room. It features a balcony, a large bed, and modern amenities.",
+    "room_feature": ["Free Wi-Fi", "Air Conditioning", "Balcony", "Ocean View"],
+    "type": "Double",
+    "availability": true,
+    "image": "https://i.ibb.co/0nRBBFD/11.jpg",
+    "special_offer": ""
+  },
+  {
+    "id": 9,
+    "title": "Premium Suite",
+    "price": 350,
+    "size": "800 sq ft",
+    "room_description": "Indulge in luxury with our premium suite. It features a private terrace, a king-sized bed, and a spacious living area.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Private Terrace",
+      "King-sized Bed"
+    ],
+    "type": "Suite",
+    "availability": true,
+    "image": "https://i.ibb.co/WKQFhBN/1.jpg",
+    "special_offer": "10% off for repeat guests."
+  },
+  {
+    "id": 10,
+    "title": "Standard Double Room",
+    "price": 140,
+    "size": "300 sq ft",
+    "room_description": "Our standard double room is a comfortable choice for couples. It includes a double bed and a sitting area for relaxation.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Sitting Area",
+      "En-suite Bathroom"
+    ],
+    "type": "Double",
+    "availability": true,
+    "image": "https://i.ibb.co/bJDmwSv/34-6.jpg",
+    "special_offer": ""
+  },
+  {
+    "id": 11,
+    "title": "City View Suite",
+    "price": 270,
+    "size": "700 sq ft",
+    "room_description": "Enjoy breathtaking city views from our city view suite. It features a private balcony, a king-sized bed, and a spacious living area.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Private Balcony",
+      "King-sized Bed"
+    ],
+    "type": "Suite",
+    "availability": true,
+    "image": "https://i.ibb.co/S0wxMM3/04-4.jpg",
+    "special_offer": "Book a 5-night stay and receive a complimentary city tour."
+  },
+  {
+    "id": 12,
+    "title": "Economy Twin Room",
+    "price": 100,
+    "size": "220 sq ft",
+    "room_description": "Our economy twin room is an affordable choice for friends or colleagues traveling together. It includes two single beds and basic amenities.",
+    "room_feature": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "En-suite Bathroom",
+      "TV"
+    ],
+    "type": "Twin",
+    "availability": true,
+    "image": "https://i.ibb.co/vhT7BNT/37-6.jpg",
+    "special_offer": "10% off for students with valid ID."
+  }
+]

@@ -5,7 +5,7 @@
 .room-content {
   left: -100%;
   transition: all 0.7s;
-  width: 90%;
+  width: 85%;
 }
 .room:hover .room-content {
   left: 0;

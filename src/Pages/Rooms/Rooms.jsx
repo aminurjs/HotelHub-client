@@ -1,15 +1,36 @@
-import { useEffect, useState } from "react";
-import Card from "../../Components/Featured/Card";
 import Room from "./Room";
+import useAxios from "../../Hooks/useAxios";
+import { useQuery } from "@tanstack/react-query";
 
 const Rooms = () => {
-  const [cards, setCards] = useState([]);
+  const axios = useAxios();
 
-  useEffect(() => {
-    fetch("./feature.json")
-      .then((res) => res.json())
-      .then((data) => setCards(data));
-  }, []);
+  const getRooms = async () => {
+    const res = await axios.get("/rooms");
+    return res.data;
+  };
+
+  const { data: cards } = useQuery({
+    queryKey: ["rooms"],
+    queryFn: getRooms,
+  });
+
+  const handleSort = (e) => {
+    const val = e.target.value;
+    console.log(val);
+    // if (val == "dfl") {
+    //   setDfl(!dfl);
+    //   console.log(cards);
+    // }
+    // if (val == "htl") {
+    //   setCards(cards.sort((a, b) => b.price - a.price));
+    //   console.log(cards);
+    // }
+    // if (val == "lth") {
+    //   setCards(cards.sort((a, b) => b.price - a.price));
+    //   console.log(cards);
+    // }
+  };
 
   return (
     <div>
@@ -29,35 +50,28 @@ const Rooms = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto py-28">
-        <div className=" flex justify-between items-center mb-5">
+        <div className=" flex justify-between items-center mb-10">
           <div>
             <h2 className="text-2xl text-dark-01 md:text-3xl font-medium mb-2">
               Explore Available Rooms
             </h2>
-            <div className="w-20 h-1.5 bg-dark-03 mb-5 ml-2"></div>
+            <div className="w-20 h-1.5 bg-dark-03 ml-2"></div>
           </div>
-          <button className="py-3 px-10 text-white bg-dark-03 rounded active:scale-95">
-            See More
-          </button>
+          <h2 className=" text-dark-01">
+            Sort :{" "}
+            <select
+              onChange={handleSort}
+              className="ml-2 py-1 px-2 border border-gray-300 rounded outline-none"
+            >
+              <option value="dfl">Default</option>
+              <option value="htl">Price{"(High - Low)"}</option>
+              <option value="lth">Price{"(Low - High)"}</option>
+            </select>
+          </h2>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-6 duration-500">
           {cards?.map((card) => (
             <Room key={card.id} card={card} />
-          ))}
-          {cards?.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-          {cards?.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-          {cards?.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-          {cards?.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-          {cards?.map((card) => (
-            <Card key={card.id} card={card} />
           ))}
         </div>
       </div>
