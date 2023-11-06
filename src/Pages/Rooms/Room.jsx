@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 const Room = ({ card }) => {
   const navigate = useNavigate();
   const handleDetails = () => {
-    navigate(`/room/details/${card.id}`);
+    navigate(`/room/details/${card._id}`);
   };
   return (
-    <div key={card.id} className="bg-white rounded ">
+    <div className="bg-white rounded ">
       <div className=" room overflow-hidden relative">
         <img
           onClick={handleDetails}
@@ -16,8 +16,11 @@ const Room = ({ card }) => {
           src={card.image}
           alt="Image 3"
         />
-        <h2 className="room-title text-lg font-medium text-dark-01 bg-white z-10 absolute left-0 bottom-0 py-2 px-3 duration-700 border-gray-200 border-b border-l">
+        <h2 className=" w-3/5 rounded-sm room-title text-lg font-medium text-dark-01 bg-white z-10 absolute left-0 bottom-0 py-1.5 px-4 duration-700 border-gray-200 border-b border-l">
           {card.title}
+          <span className=" text-dark-01 mb-2 block text-sm">
+            From: <span className="text-base">${card.price}</span> / Night
+          </span>
         </h2>
 
         <div className="p-5 absolute room-content bg-white duration-700 border h-full flex flex-col">
@@ -35,18 +38,24 @@ const Room = ({ card }) => {
               ? `${card.room_description.slice(0, 105)} ...`
               : card.room_description}
           </p>
+          <p className="text-dark-02 text-sm mb-1">
+            Availability : {card?.availability ? "Available" : "Not Available"}
+          </p>
           <div className="flex justify-between items-center flex-wrap">
             <h2 className=" text-dark-01 mb-2">
               From: <span className="text-lg">${card.price}</span> / Night
             </h2>
-            <h3 className="text-dark-01 mb-2"> Reviewed: 0</h3>
+            <h3 className="text-dark-01 mb-2">
+              {" "}
+              Reviewed: {card?.reviews.length}
+            </h3>
           </div>
           <div>
             <button
               onClick={handleDetails}
               className="py-2 px-5 text-white bg-dark-03 border border-dark-03 rounded active:scale-95"
             >
-              Check Availability
+              View Details
             </button>
           </div>
         </div>

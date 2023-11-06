@@ -12,9 +12,42 @@
       "En-suite Bathroom"
     ],
     "type": "Single",
+    "capacity": 1,
     "availability": true,
     "image": "https://i.ibb.co/k8bCtRt/10.jpg",
-    "special_offer": "Get 10% off for bookings made 7 days in advance."
+    "special_offer": "Get 10% off for bookings made 7 days in advance",
+    "reviews": [
+      {
+        "name": "John",
+        "photo": null,
+        "rating": 4,
+        "description": "Great room! Very comfortable and clean. I enjoyed my stay here."
+      },
+      {
+        "name": "Emily",
+        "photo": null,
+        "rating": 5,
+        "description": "Amazing value for money. The room was cozy and had all the amenities I needed."
+      },
+      {
+        "name": "David",
+        "photo": null,
+        "rating": 4,
+        "description": "Friendly staff and a convenient location. Would recommend it."
+      },
+      {
+        "name": "Lisa",
+        "photo": null,
+        "rating": 5,
+        "description": "I loved the room and the special offer for early bookings. Will definitely come back."
+      },
+      {
+        "name": "Michael",
+        "photo": null,
+        "rating": 3,
+        "description": "Decent room, but the noise from the street was a bit bothersome."
+      }
+    ]
   },
   {
     "id": 2,
@@ -29,9 +62,42 @@
       "Balcony with City View"
     ],
     "type": "Double",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/fnL1NRh/9.jpg",
-    "special_offer": "Free breakfast included for all bookings."
+    "special_offer": "Free breakfast included for all bookings",
+    "reviews": [
+      {
+        "name": "Sarah",
+        "photo": null,
+        "rating": 5,
+        "description": "The room was fantastic, and the view from the balcony was breathtaking."
+      },
+      {
+        "name": "James",
+        "photo": null,
+        "rating": 4,
+        "description": "A great place for a romantic getaway. We enjoyed our stay."
+      },
+      {
+        "name": "Megan",
+        "photo": null,
+        "rating": 3,
+        "description": "The room was lovely, but the breakfast could be improved."
+      },
+      {
+        "name": "Robert",
+        "photo": null,
+        "rating": 5,
+        "description": "Excellent service and a comfortable bed. Highly recommended."
+      },
+      {
+        "name": "Jennifer",
+        "photo": null,
+        "rating": 4,
+        "description": "The room was spacious and well-appointed. We had a pleasant stay."
+      }
+    ]
   },
   {
     "id": 3,
@@ -46,9 +112,30 @@
       "Whirlpool Bath"
     ],
     "type": "Suite",
+    "capacity": 2,
     "availability": false,
-    "image": "https://i.ibb.co/6rBp4Sp/7.jpg",
-    "special_offer": ""
+    "image": "https://i.ibb.co/R4T7LLY/5.jpg",
+    "special_offer": "",
+    "reviews": [
+      {
+        "name": "Sophie",
+        "photo": null,
+        "rating": 4,
+        "description": "The suite was spacious and comfortable. The whirlpool bath was a nice touch."
+      },
+      {
+        "name": "Daniel",
+        "photo": null,
+        "rating": 3,
+        "description": "A bit disappointed that the suite wasn't available on our preferred dates."
+      },
+      {
+        "name": "Olivia",
+        "photo": null,
+        "rating": 5,
+        "description": "Excellent service and attention to detail. We had a memorable stay."
+      }
+    ]
   },
   {
     "id": 4,
@@ -63,9 +150,30 @@
       "Two Bedrooms"
     ],
     "type": "Family",
+    "capacity": 4,
     "availability": true,
     "image": "https://i.ibb.co/mT0ZwyY/8.jpg",
-    "special_offer": "Stay 3 nights or more and get a 15% discount."
+    "special_offer": "Stay 3 nights or more and get a 15% discount",
+    "reviews": [
+      {
+        "name": "Mark",
+        "photo": null,
+        "rating": 5,
+        "description": "Great for families. The two bedrooms were spacious, and the kids loved it."
+      },
+      {
+        "name": "Natalie",
+        "photo": null,
+        "rating": 4,
+        "description": "A convenient and comfortable choice for family trips."
+      },
+      {
+        "name": "Paul",
+        "photo": null,
+        "rating": 3,
+        "description": "Decent stay, but the kitchenette could use more utensils."
+      }
+    ]
   },
   {
     "id": 5,
@@ -80,9 +188,30 @@
       "En-suite Bathroom"
     ],
     "type": "Twin",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/56Z0Sz1/12.jpg",
-    "special_offer": ""
+    "special_offer": "",
+    "reviews": [
+      {
+        "name": "Jessica",
+        "photo": null,
+        "rating": 4,
+        "description": "The twin room was comfortable and had a nice workspace."
+      },
+      {
+        "name": "Andrew",
+        "photo": null,
+        "rating": 5,
+        "description": "Ideal for business travelers. The free Wi-Fi was a big plus."
+      },
+      {
+        "name": "Karen",
+        "photo": null,
+        "rating": 3,
+        "description": "The room was decent, but I expected better soundproofing."
+      }
+    ]
   },
   {
     "id": 6,
@@ -97,9 +226,30 @@
       "King-sized Bed"
     ],
     "type": "Suite",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/KsN50fD/6.jpg",
-    "special_offer": "Complimentary bottle of champagne upon arrival."
+    "special_offer": "Complimentary bottle of champagne upon arrival",
+    "reviews": [
+      {
+        "name": "William",
+        "photo": null,
+        "rating": 5,
+        "description": "Absolutely amazing. The suite was luxurious, and the balcony had a great view."
+      },
+      {
+        "name": "Samantha",
+        "photo": null,
+        "rating": 4,
+        "description": "Perfect for a romantic getaway. The champagne was a nice touch."
+      },
+      {
+        "name": "Thomas",
+        "photo": null,
+        "rating": 5,
+        "description": "Outstanding service and a spacious, well-furnished suite."
+      }
+    ]
   },
   {
     "id": 7,
@@ -114,9 +264,30 @@
       "TV"
     ],
     "type": "Single",
+    "capacity": 1,
     "availability": true,
     "image": "https://i.ibb.co/nCWFpN6/13.jpg",
-    "special_offer": "10% off for stays longer than 5 nights."
+    "special_offer": "10% off for stays longer than 5 nights",
+    "reviews": [
+      {
+        "name": "Liam",
+        "photo": null,
+        "rating": 4,
+        "description": "A great budget option. The room had all the essentials I needed."
+      },
+      {
+        "name": "Ava",
+        "photo": null,
+        "rating": 3,
+        "description": "Decent stay for the price. It was clean and comfortable."
+      },
+      {
+        "name": "Noah",
+        "photo": null,
+        "rating": 4,
+        "description": "Good value for a short stay. The Wi-Fi was reliable."
+      }
+    ]
   },
   {
     "id": 8,
@@ -126,9 +297,30 @@
     "room_description": "Enjoy stunning ocean views in our double room. It features a balcony, a large bed, and modern amenities.",
     "room_feature": ["Free Wi-Fi", "Air Conditioning", "Balcony", "Ocean View"],
     "type": "Double",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/0nRBBFD/11.jpg",
-    "special_offer": ""
+    "special_offer": "",
+    "reviews": [
+      {
+        "name": "Oliver",
+        "photo": null,
+        "rating": 5,
+        "description": "The ocean view room was incredible. We had a fantastic experience."
+      },
+      {
+        "name": "Ella",
+        "photo": null,
+        "rating": 4,
+        "description": "Great choice for a romantic getaway. The balcony made it special."
+      },
+      {
+        "name": "Lucas",
+        "photo": null,
+        "rating": 3,
+        "description": "The room was nice, but the noise from the street was a bit distracting."
+      }
+    ]
   },
   {
     "id": 9,
@@ -143,9 +335,30 @@
       "King-sized Bed"
     ],
     "type": "Suite",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/WKQFhBN/1.jpg",
-    "special_offer": "10% off for repeat guests."
+    "special_offer": "10% off for repeat guests",
+    "reviews": [
+      {
+        "name": "Mia",
+        "photo": null,
+        "rating": 5,
+        "description": "An unforgettable experience. The private terrace was a highlight."
+      },
+      {
+        "name": "Jack",
+        "photo": null,
+        "rating": 4,
+        "description": "A luxurious suite with excellent amenities. The discount for repeat guests was appreciated."
+      },
+      {
+        "name": "Sophia",
+        "photo": null,
+        "rating": 3,
+        "description": "The suite was nice, but the Wi-Fi could be faster."
+      }
+    ]
   },
   {
     "id": 10,
@@ -160,9 +373,30 @@
       "En-suite Bathroom"
     ],
     "type": "Double",
+    "capacity": 2,
     "availability": true,
-    "image": "https://i.ibb.co/bJDmwSv/34-6.jpg",
-    "special_offer": ""
+    "image": "https://i.ibb.co/6rBp4Sp/7.jpg",
+    "special_offer": "",
+    "reviews": [
+      {
+        "name": "Alexander",
+        "photo": null,
+        "rating": 4,
+        "description": "The double room was comfortable, and the sitting area was a nice touch."
+      },
+      {
+        "name": "Isabella",
+        "photo": null,
+        "rating": 5,
+        "description": "A great choice for couples. We enjoyed our stay."
+      },
+      {
+        "name": "Daniel",
+        "photo": null,
+        "rating": 3,
+        "description": "The room was decent, but it lacked a city view."
+      }
+    ]
   },
   {
     "id": 11,
@@ -177,9 +411,30 @@
       "King-sized Bed"
     ],
     "type": "Suite",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/S0wxMM3/04-4.jpg",
-    "special_offer": "Book a 5-night stay and receive a complimentary city tour."
+    "special_offer": "Book a 5-night stay and receive a complimentary city tour",
+    "reviews": [
+      {
+        "name": "Emma",
+        "photo": null,
+        "rating": 5,
+        "description": "The city view from the balcony was spectacular. The suite was luxurious."
+      },
+      {
+        "name": "Logan",
+        "photo": null,
+        "rating": 4,
+        "description": "A memorable stay. The city tour was a great addition to our visit."
+      },
+      {
+        "name": "Avery",
+        "photo": null,
+        "rating": 3,
+        "description": "The suite was nice, but the Wi-Fi signal was weak."
+      }
+    ]
   },
   {
     "id": 12,
@@ -194,8 +449,29 @@
       "TV"
     ],
     "type": "Twin",
+    "capacity": 2,
     "availability": true,
     "image": "https://i.ibb.co/vhT7BNT/37-6.jpg",
-    "special_offer": "10% off for students with valid ID."
+    "special_offer": "10% off for students with valid ID",
+    "reviews": [
+      {
+        "name": "Evelyn",
+        "photo": null,
+        "rating": 4,
+        "description": "Affordable and comfortable for two people. Good value for the price."
+      },
+      {
+        "name": "Liam",
+        "photo": null,
+        "rating": 5,
+        "description": "A nice room for a budget-friendly stay. We got the student discount."
+      },
+      {
+        "name": "Harper",
+        "photo": null,
+        "rating": 3,
+        "description": "Decent room, but it could use more storage space."
+      }
+    ]
   }
 ]

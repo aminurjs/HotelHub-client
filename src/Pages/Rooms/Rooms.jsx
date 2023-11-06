@@ -71,7 +71,7 @@ const Rooms = () => {
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-6 duration-500">
           {cards?.map((card) => (
-            <Room key={card.id} card={card} />
+            <Room key={card._id} card={card} />
           ))}
         </div>
       </div>
