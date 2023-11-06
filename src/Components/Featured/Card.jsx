@@ -1,7 +1,12 @@
 import { FaRulerCombined, FaUserFriends } from "react-icons/fa";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ card }) => {
+  const navigate = useNavigate();
+  const handleDetails = () => {
+    navigate(`/room/details/${card._id}`);
+  };
   return (
     <div key={card.id} className="bg-white rounded ">
       <img className="rounded-t" src={card.image} alt="" />
@@ -12,7 +17,7 @@ const Card = ({ card }) => {
         <h2 className="text-2xl font-semibold text-dark-03  mb-4">
           Price: ${card.price} / Night
         </h2>
-        <div className="flex justify-between flex-wrap">
+        <div className="flex gap-4 flex-wrap">
           <p className="text-dark-02 mb-5 flex items-center gap-2">
             <FaUserFriends className="text-xl text-dark-03" />
             Capacity: {card.capacity}
@@ -23,14 +28,17 @@ const Card = ({ card }) => {
           </p>
         </div>
         <p className="text-dark-02 mb-4">
-          {card?.description?.length > 120
-            ? `${card.description.slice(0, 120)} ...`
-            : card.description}
+          {card?.room_description?.length > 120
+            ? `${card.room_description.slice(0, 120)} ...`
+            : card.room_description}
         </p>
-        <button className="py-3 px-10 text-white bg-dark-03 rounded active:scale-95">
+        <button className="py-3 px-8 lg:px-10 text-white bg-dark-03 rounded active:scale-95">
           Book Now
         </button>
-        <button className="py-3 px-10 text-dark-03 font-medium ml-2 bg-transparent border border-dark-03 rounded active:scale-95">
+        <button
+          onClick={handleDetails}
+          className="py-3 px-8 lg:px-10 text-dark-03 font-medium ml-2 bg-transparent border border-dark-03 rounded active:scale-95"
+        >
           View Details
         </button>
       </div>

@@ -66,7 +66,7 @@ const Navbar = () => {
             {/* Navbar menu content here */}
             {navLink.map((menu) => (
               <li
-                className="mr-5 text-dark-01 hover:text-dark-03 hover:underline"
+                className="mr-5 text-dark-01 text-lg font-medium hover:text-dark-03 hover:underline"
                 key={menu.id}
               >
                 <NavLink className="" to={menu.path}>

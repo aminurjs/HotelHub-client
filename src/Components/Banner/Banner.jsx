@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div className="bg-[url(https://i.ibb.co/m8K3wyj/luxury-hotel-resort.jpg)] bg-fixed bg-cover bg-center">
       <div className="bg-gradient-to-r from-dark-01">
-        <div className="bg-dark-01 bg-opacity-30 py-36">
+        <div className="bg-dark-01 bg-opacity-30 py-20 md:py-36">
           <div className="max-w-7xl mx-auto my-10 px-5 lg:px-0">
             <h2 className="text-lg md:text-2xl text-white  font-medium  mb-4">
               Exclusive Hotel Deals

@@ -16,7 +16,7 @@ const Room = ({ card }) => {
           src={card.image}
           alt="Image 3"
         />
-        <h2 className=" w-3/5 rounded-sm room-title text-lg font-medium text-dark-01 bg-white z-10 absolute left-0 bottom-0 py-1.5 px-4 duration-700 border-gray-200 border-b border-l">
+        <h2 className=" pr-10 rounded-sm room-title text-lg font-medium text-dark-01 bg-white z-10 absolute left-0 bottom-0 py-1.5 px-4 duration-700 border-gray-200 border-b border-l">
           {card.title}
           <span className=" text-dark-01 mb-2 block text-sm">
             From: <span className="text-base">${card.price}</span> / Night

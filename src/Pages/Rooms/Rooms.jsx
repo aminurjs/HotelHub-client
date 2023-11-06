@@ -49,13 +49,13 @@ const Rooms = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto py-28">
-        <div className=" flex justify-between items-center mb-10">
+      <div className="max-w-7xl mx-auto py-28 px-5">
+        <div className=" flex justify-between flex-wrap items-center mb-10">
           <div>
             <h2 className="text-2xl text-dark-01 md:text-3xl font-medium mb-2">
               Explore Available Rooms
             </h2>
-            <div className="w-20 h-1.5 bg-dark-03 ml-2"></div>
+            <div className="w-20 h-1.5 bg-dark-03 ml-2 mb-3"></div>
           </div>
           <h2 className=" text-dark-01">
             Sort :{" "}
@@ -69,7 +69,7 @@ const Rooms = () => {
             </select>
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-6 duration-500">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 duration-500">
           {cards?.map((card) => (
             <Room key={card._id} card={card} />
           ))}

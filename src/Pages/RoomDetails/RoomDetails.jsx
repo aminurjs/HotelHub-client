@@ -75,7 +75,7 @@ const RoomDetails = () => {
         </div>
       </div>
       <div className=" py-20 ">
-        <div className="max-w-7xl mx-auto flex gap-4 lg:gap-6 p-5 flex-col md:flex-row">
+        <div className="max-w-7xl mx-auto flex gap-4 lg:gap-6 px-5 flex-col md:flex-row">
           <div className="md:w-3/5 lg:w-2/3 mb-5">
             <img className="rounded mb-6" src={image} alt="" />
             <h3 className="mb-4 font-semibold text-dark-01  text-2xl pb-2 border-b border-gray-300">
@@ -113,12 +113,6 @@ const RoomDetails = () => {
                 </li>
               ))}
             </ul>
-            <h2 className="text-dark-01 text-2xl font-semibold pb-4 mb-5 border-b border-gray-300">
-              Reviews
-            </h2>
-            {reviews?.map((review, idx) => (
-              <Review key={idx} review={review}></Review>
-            ))}
             <div>
               <h4 className="mb-2 text-lg font-semibold mt-10 ">Shares:</h4>
               <div className="text-blue-600 text-2xl flex gap-4">
@@ -206,6 +200,14 @@ const RoomDetails = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-5 mt-10">
+          <h2 className="text-dark-01 text-2xl font-semibold pb-4 mb-5 border-b border-gray-300">
+            Reviews
+          </h2>
+          {reviews?.map((review, idx) => (
+            <Review key={idx} review={review}></Review>
+          ))}
         </div>
       </div>
     </>

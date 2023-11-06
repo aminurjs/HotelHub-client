@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function DateRangePicker() {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -13,7 +13,7 @@ function DateRangePicker() {
   };
 
   return (
-    <div className="bg-white rounded p-3">
+    <div className="border-t border-gray-300 pt-2">
       <div className=" mb-5">
         <div className=" mb-2">
           <label

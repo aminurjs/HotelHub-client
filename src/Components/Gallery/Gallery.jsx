@@ -1,18 +1,18 @@
 const Gallery = () => {
   return (
-    <div className="mx-auto max-w-7xl py-20">
-      <div className="flex justify-between items-end mb-5">
+    <div className="mx-auto max-w-7xl py-20 px-5">
+      <div className="flex justify-between items-center mb-5">
         <div>
           <h2 className="text-2xl text-dark-01 md:text-3xl font-medium mb-2">
             Photos of our rooms
           </h2>
           <div className="w-20 h-1.5 bg-dark-03 mb-5 ml-2"></div>
         </div>
-        <button className="py-3 px-10 text-white bg-dark-03 rounded active:scale-95">
+        <button className="py-2 px-5 md:py-3 md:px-10 mb-2 text-white bg-dark-03 rounded active:scale-95">
           See More
         </button>
       </div>
-      <div className="grid grid-cols-3 grid-rows-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-5">
         <div className="row-span-2 overflow-hidden">
           <img
             className="hover:scale-125 duration-1000"
