@@ -1,6 +1,7 @@
 import Room from "./Room";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const Rooms = () => {
   const axios = useAxios();
@@ -34,6 +35,9 @@ const Rooms = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Rooms - HotelHub</title>
+      </Helmet>
       <div className="bg-[url(https://i.ibb.co/2McJBNk/7041389-437-1.jpg)] bg-cover bg-center">
         <div className="bg-gradient-to-r from-dark-01">
           <div className="bg-dark-01 bg-opacity-30 py-24">

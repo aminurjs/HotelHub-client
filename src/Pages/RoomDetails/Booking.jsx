@@ -46,10 +46,10 @@ const Booking = ({ bookingData }) => {
   const handleBooking = () => {
     if (user) {
       if (checkBooking) {
-        return swal("Sorry!", "You have already booked!", "error");
+        return swal({ title: "You have already booked!" });
       }
       if (!availability) {
-        return swal("Sorry!", "This Room isn't Available!", "error");
+        return swal({ title: "This Room isn't Available!" });
       }
       if (
         startDate.length === 0 ||
@@ -69,7 +69,15 @@ const Booking = ({ bookingData }) => {
         setOpenModal(true);
       }
     } else {
-      navigate("/login");
+      swal({
+        title: "Please Login First",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          navigate("/login");
+        }
+      });
     }
   };
 

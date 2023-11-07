@@ -3,6 +3,7 @@ import useAxios from "../../Hooks/useAxios";
 import { Link } from "react-router-dom";
 import MyRoom from "./MyRoom";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet";
 
 const MyBooking = () => {
   const { user } = useAuth();
@@ -21,6 +22,9 @@ const MyBooking = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>MyBooking - HotelHub</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto py-12 px-5">
         {bookedRooms?.length > 0 ? (
           <div className="rounded py-10 px-5 md:px-10">

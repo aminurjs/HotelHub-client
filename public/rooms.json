@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "title": "Cozy Single Room",
     "price": 80,
     "size": "200 sq ft",
@@ -28,29 +27,10 @@
         "photo": null,
         "rating": 5,
         "description": "Amazing value for money. The room was cozy and had all the amenities I needed."
-      },
-      {
-        "name": "David",
-        "photo": null,
-        "rating": 4,
-        "description": "Friendly staff and a convenient location. Would recommend it."
-      },
-      {
-        "name": "Lisa",
-        "photo": null,
-        "rating": 5,
-        "description": "I loved the room and the special offer for early bookings. Will definitely come back."
-      },
-      {
-        "name": "Michael",
-        "photo": null,
-        "rating": 3,
-        "description": "Decent room, but the noise from the street was a bit bothersome."
       }
     ]
   },
   {
-    "id": 2,
     "title": "Deluxe Double Room",
     "price": 150,
     "size": "350 sq ft",
@@ -78,29 +58,10 @@
         "photo": null,
         "rating": 4,
         "description": "A great place for a romantic getaway. We enjoyed our stay."
-      },
-      {
-        "name": "Megan",
-        "photo": null,
-        "rating": 3,
-        "description": "The room was lovely, but the breakfast could be improved."
-      },
-      {
-        "name": "Robert",
-        "photo": null,
-        "rating": 5,
-        "description": "Excellent service and a comfortable bed. Highly recommended."
-      },
-      {
-        "name": "Jennifer",
-        "photo": null,
-        "rating": 4,
-        "description": "The room was spacious and well-appointed. We had a pleasant stay."
       }
     ]
   },
   {
-    "id": 3,
     "title": "Luxury Suite",
     "price": 250,
     "size": "600 sq ft",
@@ -138,7 +99,6 @@
     ]
   },
   {
-    "id": 4,
     "title": "Family Room",
     "price": 200,
     "size": "450 sq ft",
@@ -154,29 +114,9 @@
     "availability": true,
     "image": "https://i.ibb.co/mT0ZwyY/8.jpg",
     "special_offer": "Stay 3 nights or more and get a 15% discount",
-    "reviews": [
-      {
-        "name": "Mark",
-        "photo": null,
-        "rating": 5,
-        "description": "Great for families. The two bedrooms were spacious, and the kids loved it."
-      },
-      {
-        "name": "Natalie",
-        "photo": null,
-        "rating": 4,
-        "description": "A convenient and comfortable choice for family trips."
-      },
-      {
-        "name": "Paul",
-        "photo": null,
-        "rating": 3,
-        "description": "Decent stay, but the kitchenette could use more utensils."
-      }
-    ]
+    "reviews": []
   },
   {
-    "id": 5,
     "title": "Standard Twin Room",
     "price": 120,
     "size": "250 sq ft",
@@ -204,17 +144,10 @@
         "photo": null,
         "rating": 5,
         "description": "Ideal for business travelers. The free Wi-Fi was a big plus."
-      },
-      {
-        "name": "Karen",
-        "photo": null,
-        "rating": 3,
-        "description": "The room was decent, but I expected better soundproofing."
       }
     ]
   },
   {
-    "id": 6,
     "title": "Executive Suite",
     "price": 300,
     "size": "700 sq ft",
@@ -236,23 +169,10 @@
         "photo": null,
         "rating": 5,
         "description": "Absolutely amazing. The suite was luxurious, and the balcony had a great view."
-      },
-      {
-        "name": "Samantha",
-        "photo": null,
-        "rating": 4,
-        "description": "Perfect for a romantic getaway. The champagne was a nice touch."
-      },
-      {
-        "name": "Thomas",
-        "photo": null,
-        "rating": 5,
-        "description": "Outstanding service and a spacious, well-furnished suite."
       }
     ]
   },
   {
-    "id": 7,
     "title": "Economy Single Room",
     "price": 60,
     "size": "180 sq ft",
@@ -274,23 +194,10 @@
         "photo": null,
         "rating": 4,
         "description": "A great budget option. The room had all the essentials I needed."
-      },
-      {
-        "name": "Ava",
-        "photo": null,
-        "rating": 3,
-        "description": "Decent stay for the price. It was clean and comfortable."
-      },
-      {
-        "name": "Noah",
-        "photo": null,
-        "rating": 4,
-        "description": "Good value for a short stay. The Wi-Fi was reliable."
       }
     ]
   },
   {
-    "id": 8,
     "title": "Ocean View Double Room",
     "price": 180,
     "size": "400 sq ft",
@@ -307,23 +214,10 @@
         "photo": null,
         "rating": 5,
         "description": "The ocean view room was incredible. We had a fantastic experience."
-      },
-      {
-        "name": "Ella",
-        "photo": null,
-        "rating": 4,
-        "description": "Great choice for a romantic getaway. The balcony made it special."
-      },
-      {
-        "name": "Lucas",
-        "photo": null,
-        "rating": 3,
-        "description": "The room was nice, but the noise from the street was a bit distracting."
       }
     ]
   },
   {
-    "id": 9,
     "title": "Premium Suite",
     "price": 350,
     "size": "800 sq ft",
@@ -345,23 +239,10 @@
         "photo": null,
         "rating": 5,
         "description": "An unforgettable experience. The private terrace was a highlight."
-      },
-      {
-        "name": "Jack",
-        "photo": null,
-        "rating": 4,
-        "description": "A luxurious suite with excellent amenities. The discount for repeat guests was appreciated."
-      },
-      {
-        "name": "Sophia",
-        "photo": null,
-        "rating": 3,
-        "description": "The suite was nice, but the Wi-Fi could be faster."
       }
     ]
   },
   {
-    "id": 10,
     "title": "Standard Double Room",
     "price": 140,
     "size": "300 sq ft",
@@ -375,7 +256,7 @@
     "type": "Double",
     "capacity": 2,
     "availability": true,
-    "image": "https://i.ibb.co/6rBp4Sp/7.jpg",
+    "image": "https://i.ibb.co/bJDmwSv/34-6.jpg",
     "special_offer": "",
     "reviews": [
       {
@@ -383,23 +264,10 @@
         "photo": null,
         "rating": 4,
         "description": "The double room was comfortable, and the sitting area was a nice touch."
-      },
-      {
-        "name": "Isabella",
-        "photo": null,
-        "rating": 5,
-        "description": "A great choice for couples. We enjoyed our stay."
-      },
-      {
-        "name": "Daniel",
-        "photo": null,
-        "rating": 3,
-        "description": "The room was decent, but it lacked a city view."
       }
     ]
   },
   {
-    "id": 11,
     "title": "City View Suite",
     "price": 270,
     "size": "700 sq ft",
@@ -421,23 +289,10 @@
         "photo": null,
         "rating": 5,
         "description": "The city view from the balcony was spectacular. The suite was luxurious."
-      },
-      {
-        "name": "Logan",
-        "photo": null,
-        "rating": 4,
-        "description": "A memorable stay. The city tour was a great addition to our visit."
-      },
-      {
-        "name": "Avery",
-        "photo": null,
-        "rating": 3,
-        "description": "The suite was nice, but the Wi-Fi signal was weak."
       }
     ]
   },
   {
-    "id": 12,
     "title": "Economy Twin Room",
     "price": 100,
     "size": "220 sq ft",
@@ -459,18 +314,6 @@
         "photo": null,
         "rating": 4,
         "description": "Affordable and comfortable for two people. Good value for the price."
-      },
-      {
-        "name": "Liam",
-        "photo": null,
-        "rating": 5,
-        "description": "A nice room for a budget-friendly stay. We got the student discount."
-      },
-      {
-        "name": "Harper",
-        "photo": null,
-        "rating": 3,
-        "description": "Decent room, but it could use more storage space."
       }
     ]
   }

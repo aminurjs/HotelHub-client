@@ -16,6 +16,8 @@ import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import Review from "./Review";
 import Booking from "./Booking";
+import AddReview from "./AddReview";
+import { Helmet } from "react-helmet";
 
 const RoomDetails = () => {
   const { id } = useParams();
@@ -30,14 +32,20 @@ const RoomDetails = () => {
     return res.data;
   };
 
-  const { data: room, isLoading } = useQuery({
+  const {
+    data: room,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["room"],
     queryFn: getRoom,
   });
   if (isLoading) {
     return <div className="text-center mt-10">Loading ...</div>;
   }
-
+  const fetchAgain = () => {
+    refetch();
+  };
   const {
     _id,
     image,
@@ -66,6 +74,9 @@ const RoomDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Room Details - HotelHub</title>
+      </Helmet>
       <div
         style={{
           backgroundImage: bgImg,
@@ -213,12 +224,23 @@ const RoomDetails = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-5 mt-10">
-          <h2 className="text-dark-01 text-2xl font-semibold pb-4 mb-5 border-b border-gray-300">
-            Reviews
-          </h2>
-          {reviews?.map((review, idx) => (
-            <Review key={idx} review={review}></Review>
-          ))}
+          <div className=" pb-4 mb-5 border-b border-gray-300 flex justify-between">
+            <h2 className="text-dark-01 text-2xl font-semibold">
+              Reviews - {reviews?.length}
+            </h2>
+            <AddReview _id={_id} fetchAgain={fetchAgain} />
+          </div>
+          {reviews.length > 0 ? (
+            <div className="flex flex-col-reverse">
+              {reviews?.map((review, i) => (
+                <Review key={i} review={review}></Review>
+              ))}
+            </div>
+          ) : (
+            <h2 className="text-dark-01 text-2xl font-semibold text-center">
+              Please Write Your Experience about our Hotel.
+            </h2>
+          )}
         </div>
       </div>
     </>

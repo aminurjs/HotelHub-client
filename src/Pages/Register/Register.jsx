@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, updateUser, googleLogin } = useAuth();
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ const Register = () => {
         updateUser(name, image).then(() => {
           // Profile updated!
           toast.success("Successfully Registered!", { id: toastId });
-          // navigate("/");
+          navigate("/");
         });
       })
       .catch((err) => {
@@ -49,7 +49,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Successfully Logged in!", { id: toastId });
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
