@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import Rooms from "../Pages/Rooms/Rooms";
 import RoomDetails from "../Pages/RoomDetails/RoomDetails";
 import Error from "../Pages/Error/Error";
+import MyBooking from "../Pages/Booking/MyBooking";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const Routes = createBrowserRouter([
       {
         path: "/room/details/:id",
         element: <RoomDetails />,
+      },
+      {
+        path: "/bookings",
+        element: (
+          <PrivateRoutes>
+            <MyBooking />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",

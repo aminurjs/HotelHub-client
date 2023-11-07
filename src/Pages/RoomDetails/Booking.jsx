@@ -13,13 +13,16 @@ import { useNavigate } from "react-router-dom";
 
 const Booking = ({ bookingData }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [bookingDays, setBookingDays] = useState("");
   const axios = useAxios();
-  const { user } = useAuth();
   const navigate = useNavigate();
+  const { user } = useAuth();
 
-  const { _id, title, type, size, availability, capacity, price } = bookingData;
+  const { _id, title, type, size, availability, capacity, price, image } =
+    bookingData;
   const [totalPrice, setTotalPrice] = useState(price);
 
   const handleStartDateChange = (date) => {
@@ -46,6 +49,7 @@ const Booking = ({ bookingData }) => {
         const dateEnd = new Date(endDate);
         const duration = dateEnd.getTime() - dateStart.getTime();
         const bookingDay = duration / (1000 * 3600 * 24);
+        setBookingDays(bookingDay);
         setTotalPrice(price * bookingDay);
 
         setOpenModal(true);
@@ -56,22 +60,28 @@ const Booking = ({ bookingData }) => {
   };
 
   const handleBookingConfirm = () => {
+    setLoading(true);
     const bookingPostData = {
       id: _id,
       email: user.email,
       title,
       type,
       size,
-      availability,
       capacity,
-      totalPrice,
+      price,
+      bookingDays,
       startDate,
       endDate,
+      image,
     };
-    console.log(bookingPostData);
-    () => setOpenModal(false);
     axios.post("/booking", bookingPostData).then((response) => {
       console.log(response.data);
+
+      if (response.data) {
+        setLoading(false);
+        setOpenModal(false);
+        return swal("Successfully Booked", "", "success");
+      }
     });
   };
 
@@ -139,10 +149,15 @@ const Booking = ({ bookingData }) => {
                   <p className="text-dark-02 mb-2 flex items-center gap-2">
                     <FiType className="text-lg text-dark-03" />
                     Type: {type}
-                  </p>
+                  </p>{" "}
                 </div>
 
                 <div>
+                  {" "}
+                  <p className="text-lg text-dark-01 mb-2 flex items-center gap-2">
+                    <AiOutlineCalendar className="text-lg text-dark-03" />
+                    Duration: {bookingDays} days
+                  </p>
                   <p className="text-lg text-dark-01 mb-2 flex items-center gap-2">
                     <AiOutlineCalendar className="text-lg text-dark-03" />
                     Check-in Date: {startDate}
@@ -168,15 +183,21 @@ const Booking = ({ bookingData }) => {
               <div className="text-right flex justify-end w-full">
                 <button
                   onClick={() => setOpenModal(false)}
-                  className="py-2 px-6 text-dark-03 bg-transparent border border-dark-03 rounded uppercase font-medium active:scale-95"
+                  className="py-2 px-4 md:px-6 text-dark-03 bg-transparent border border-dark-03 rounded uppercase font-medium active:scale-95"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleBookingConfirm}
-                  className="ml-2 py-2 px-6 text-white bg-dark-03 border border-dark-03 rounded uppercase font-medium active:scale-95"
+                  className="ml-2 py-2 px-3 md:px-6 text-white bg-dark-03 border border-dark-03 rounded uppercase font-medium active:scale-95"
                 >
-                  Confirm Booking
+                  {loading ? (
+                    <div className="w-20 md:w-32">
+                      <span className="loading loading-dots loading-sm"></span>
+                    </div>
+                  ) : (
+                    "Confirm Booking"
+                  )}
                 </button>
               </div>
             </Modal.Footer>

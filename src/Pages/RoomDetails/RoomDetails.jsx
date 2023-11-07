@@ -52,7 +52,16 @@ const RoomDetails = () => {
     reviews,
     capacity,
   } = room;
-  const bookingData = { _id, title, type, size, availability, capacity, price };
+  const bookingData = {
+    _id,
+    title,
+    type,
+    size,
+    availability,
+    capacity,
+    price,
+    image,
+  };
   const bgImg = `url(${image})`;
 
   return (
