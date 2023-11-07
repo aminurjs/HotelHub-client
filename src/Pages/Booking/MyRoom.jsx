@@ -12,6 +12,7 @@ import moment from "moment/moment";
 const MyRoom = ({ room, fetchAgain }) => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState("");
   const axios = useAxios();
   const {
     _id,
@@ -39,26 +40,40 @@ const MyRoom = ({ room, fetchAgain }) => {
 
   const handleUpdateDate = () => {
     setLoading(true);
+    setAlert("");
+
+    if (updatedStartDate >= updatedEndDate) {
+      setAlert("Please provide valid Date");
+      return setLoading(false);
+    }
+    const dateStart = new Date(updatedStartDate);
+    const dateEnd = new Date(updatedEndDate);
+    const durationS = dateEnd.getTime() - dateStart.getTime();
+    const duration = durationS / (1000 * 3600 * 24);
     const updatedDate = {
       updatedStartDate,
       updatedEndDate,
+      duration,
     };
+    console.log(updatedDate);
     axios
-      .patch("/updatedate", updatedDate)
+      .patch(`/booking/updatedate/${_id}`, updatedDate)
       .then((response) => {
         console.log(response.data);
-        // if (response.data) {
-        //   setLoading(false);
-        //   setOpenModal(false);
-        //   return swal("Successfully Booked", "", "success");
-        // }
+        if (response.data) {
+          setLoading(false);
+          setOpenModal(false);
+          fetchAgain();
+          return swal("Successfully Booked", "", "success");
+        }
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
+        setOpenModal(false);
         return swal(error.code, error.message, "error");
       });
   };
-  console.log(_id);
   const handleCancelBooking = () => {
     const currentDate = moment().format("MM-DD-YYYY");
     const dateStart = new Date(startDate);
@@ -85,8 +100,6 @@ const MyRoom = ({ room, fetchAgain }) => {
             .catch((error) => {
               return swal("Something Error", error, "error");
             });
-        } else {
-          swal({ title: "Cancel Operation!" });
         }
       });
     } else {
@@ -150,7 +163,7 @@ const MyRoom = ({ room, fetchAgain }) => {
               </Modal.Header>
               <Modal.Body>
                 <div className="p-5">
-                  <div className=" mb-5">
+                  <div className=" mb-2">
                     <div className=" mb-2">
                       <label
                         htmlFor="start-date"
@@ -184,6 +197,7 @@ const MyRoom = ({ room, fetchAgain }) => {
                       />
                     </div>
                   </div>
+                  <p className="text-orange-500 ">{alert}</p>
                 </div>
               </Modal.Body>
               <Modal.Footer>

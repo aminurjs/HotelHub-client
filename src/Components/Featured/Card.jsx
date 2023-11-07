@@ -32,14 +32,11 @@ const Card = ({ card }) => {
             ? `${card.room_description.slice(0, 120)} ...`
             : card.room_description}
         </p>
-        <button className="py-3 px-8 lg:px-10 text-white bg-dark-03 rounded active:scale-95">
-          Book Now
-        </button>
         <button
           onClick={handleDetails}
-          className="py-3 px-8 lg:px-10 text-dark-03 font-medium ml-2 bg-transparent border border-dark-03 rounded active:scale-95"
+          className="py-3 px-8 lg:px-10 text-white bg-dark-03 rounded active:scale-95"
         >
-          View Details
+          Book Now
         </button>
       </div>
     </div>

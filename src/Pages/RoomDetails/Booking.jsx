@@ -101,6 +101,8 @@ const Booking = ({ bookingData }) => {
         }
       })
       .catch((error) => {
+        setLoading(false);
+        setOpenModal(false);
         return swal("Something Error", error, "error");
       });
   };
