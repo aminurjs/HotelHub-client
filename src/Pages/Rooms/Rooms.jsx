@@ -49,6 +49,7 @@ const Rooms = () => {
           </div>
         </div>
       </div>
+
       <div className="max-w-7xl mx-auto py-28 px-5">
         <div className=" flex justify-between flex-wrap items-center mb-10">
           <div>

@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Rating from "react-rating";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/pagination";
 import { FaQuoteRight } from "react-icons/fa";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 const Testimonials = () => {
   const axios = useAxios();
@@ -23,8 +23,8 @@ const Testimonials = () => {
 
   return (
     <>
-      <div className="py-20 px-5 hidden md:block">
-        <div className="container lg:max-w-7xl mx-auto bg-dark-03 p-1">
+      <div className="py-20 px-5 hidden md:block max-w-7xl mx-auto">
+        <div className="container mx-auto bg-dark-03 p-1">
           <div className=" bg-white p-10 flex items-center flex-col md:flex-row gap-10">
             <div className="md:w-1/2 lg:w-1/3">
               <h3 className="text-dark-03 tracking-[5px] mb-3">TESTIMONIALS</h3>
@@ -40,8 +40,8 @@ const Testimonials = () => {
 
             <div className="w-2/3 hidden lg:block">
               <Swiper
-                modules={[Navigation, Autoplay, Pagination, A11y]}
-                spaceBetween={50}
+                // install Swiper modules
+                modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={2}
                 pagination={{ clickable: true }}
                 autoplay={true}

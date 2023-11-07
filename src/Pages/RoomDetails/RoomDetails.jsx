@@ -15,7 +15,7 @@ import { useEffect } from "react";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import Review from "./Review";
-import DateRangePicker from "./Date";
+import Booking from "./Booking";
 
 const RoomDetails = () => {
   const { id } = useParams();
@@ -39,6 +39,7 @@ const RoomDetails = () => {
   }
 
   const {
+    _id,
     image,
     title,
     type,
@@ -49,7 +50,9 @@ const RoomDetails = () => {
     availability,
     special_offer,
     reviews,
+    capacity,
   } = room;
+  const bookingData = { _id, title, type, size, availability, capacity, price };
   const bgImg = `url(${image})`;
 
   return (
@@ -143,7 +146,7 @@ const RoomDetails = () => {
             </p>
             <p className="text-dark-02 mb-2 flex items-center gap-2">
               <FaUserFriends className="text-xl text-dark-03" />
-              Capacity: 2 Guests
+              Capacity: {capacity} Guests
             </p>
             <p className="text-dark-02 mb-2 flex items-center gap-2">
               <FaRulerCombined className="text-lg text-dark-03" />
@@ -165,8 +168,7 @@ const RoomDetails = () => {
                 From : <span className="text-2xl">${price}</span> / Night
               </p>
             </div>
-
-            <DateRangePicker />
+            <Booking bookingData={bookingData}></Booking>
             <h3 className="mb-4 font-semibold text-xl pb-2 border-b border-gray-300 mt-10">
               Find us on
             </h3>
