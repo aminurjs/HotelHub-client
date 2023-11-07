@@ -10,6 +10,7 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 const Booking = ({ bookingData }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -24,6 +25,16 @@ const Booking = ({ bookingData }) => {
   const { _id, title, type, size, availability, capacity, price, image } =
     bookingData;
   const [totalPrice, setTotalPrice] = useState(price);
+  const getBookedRooms = async () => {
+    const res = await axios.get(`/booking/${user.email}`);
+    return res.data;
+  };
+
+  const { data, refetch } = useQuery({
+    queryKey: ["bookedByUserFilter"],
+    queryFn: getBookedRooms,
+  });
+  const checkBooking = data?.find((a) => a.id === _id);
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -34,6 +45,9 @@ const Booking = ({ bookingData }) => {
   };
   const handleBooking = () => {
     if (user) {
+      if (checkBooking) {
+        return swal("Sorry!", "You have already booked!", "error");
+      }
       if (!availability) {
         return swal("Sorry!", "This Room isn't Available!", "error");
       }
@@ -74,15 +88,21 @@ const Booking = ({ bookingData }) => {
       endDate,
       image,
     };
-    axios.post("/booking", bookingPostData).then((response) => {
-      console.log(response.data);
+    axios
+      .post("/booking", bookingPostData)
+      .then((response) => {
+        console.log(response.data);
 
-      if (response.data) {
-        setLoading(false);
-        setOpenModal(false);
-        return swal("Successfully Booked", "", "success");
-      }
-    });
+        if (response.data) {
+          setLoading(false);
+          setOpenModal(false);
+          refetch();
+          return swal("Successfully Booked", "", "success");
+        }
+      })
+      .catch((error) => {
+        return swal("Something Error", error, "error");
+      });
   };
 
   return (
@@ -123,12 +143,14 @@ const Booking = ({ bookingData }) => {
           </div>
         </div>
         <div>
-          <button
-            onClick={handleBooking}
-            className="py-3 px-10 text-white bg-dark-03 border border-dark-03 rounded uppercase font-medium active:scale-95"
-          >
-            Book Rooms
-          </button>
+          <div>
+            <button
+              onClick={handleBooking}
+              className="py-3 px-10 text-white bg-dark-03 border border-dark-03 rounded uppercase font-medium active:scale-95"
+            >
+              Booking Room
+            </button>
+          </div>
           <Modal show={openModal} onClose={() => setOpenModal(false)}>
             <Modal.Header>
               <span className="text-dark-01 font-semibold text-4xl">
@@ -136,7 +158,7 @@ const Booking = ({ bookingData }) => {
               </span>
             </Modal.Header>
             <Modal.Body>
-              <div className="p-[1px]">
+              <div className="p-5">
                 <div className="flex gap-3 flex-wrap">
                   <p className="text-dark-02 mb-2 flex items-center gap-2">
                     <FaUserFriends className="text-xl text-dark-03" />
@@ -180,7 +202,7 @@ const Booking = ({ bookingData }) => {
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <div className="text-right flex justify-end w-full">
+              <div className="text-right flex justify-end w-full p-2">
                 <button
                   onClick={() => setOpenModal(false)}
                   className="py-2 px-4 md:px-6 text-dark-03 bg-transparent border border-dark-03 rounded uppercase font-medium active:scale-95"

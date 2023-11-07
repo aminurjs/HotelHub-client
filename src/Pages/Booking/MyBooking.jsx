@@ -2,19 +2,23 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
 import { Link } from "react-router-dom";
 import MyRoom from "./MyRoom";
+import useAuth from "../../Hooks/useAuth";
 
 const MyBooking = () => {
+  const { user } = useAuth();
   const axios = useAxios();
   const getBookedRooms = async () => {
-    const res = await axios.get(`/booking/dev.aminur@gmail.com`);
+    const res = await axios.get(`/booking/${user.email}`);
     return res.data;
   };
 
-  const { data: bookedRooms } = useQuery({
+  const { data: bookedRooms, refetch } = useQuery({
     queryKey: ["bookedByUser"],
     queryFn: getBookedRooms,
   });
-  console.log(bookedRooms);
+  const fetchAgain = () => {
+    refetch();
+  };
   return (
     <div>
       <div className="max-w-7xl mx-auto py-12 px-5">
@@ -25,7 +29,11 @@ const MyBooking = () => {
             </h2>
             <div className="grid grid-cols-1 gap-5">
               {bookedRooms?.map((room) => (
-                <MyRoom key={room._id} room={room}></MyRoom>
+                <MyRoom
+                  key={room._id}
+                  room={room}
+                  fetchAgain={fetchAgain}
+                ></MyRoom>
               ))}
             </div>
           </div>

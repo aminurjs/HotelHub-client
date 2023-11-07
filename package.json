@@ -15,6 +15,7 @@
     "firebase": "^10.5.2",
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
+    "moment": "^2.29.4",
     "rating": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,7 +26,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.18.0",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.9.0",
+    "sweetalert2": "^11.6.13",
     "sweetalert2-react-content": "^5.0.7",
     "swiper": "^11.0.3"
   },

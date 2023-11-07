@@ -1,6 +1,6 @@
-.swal-button {
-  background-color: #00c0c1;
+.swal-button--confirm {
+  background-color: #00c0c1 !important;
 }
-.swal-button:hover {
+.swal-button--confirm:hover {
   background-color: #08b1b1 !important;
 }
