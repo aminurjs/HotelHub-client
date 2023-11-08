@@ -188,7 +188,10 @@ const RoomDetails = () => {
                 From : <span className="text-2xl">${price}</span> / Night
               </p>
             </div>
-            <Booking bookingData={bookingData}></Booking>
+            <Booking
+              bookingData={bookingData}
+              fetchAgain={fetchAgain}
+            ></Booking>
             <h3 className="mb-4 font-semibold text-xl pb-2 border-b border-gray-300 mt-10">
               Find us on
             </h3>

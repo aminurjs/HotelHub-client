@@ -90,9 +90,12 @@ const MyRoom = ({ room, fetchAgain }) => {
       }).then((willDelete) => {
         if (willDelete) {
           axios
-            .delete(`/booking/delete/${_id}`)
+            .delete(`/booking/delete?_id=${_id}&id=${id}`)
             .then((response) => {
-              if (response.data.deletedCount > 0) {
+              if (
+                response.data.result.deletedCount > 0 &&
+                response.data.result2.modifiedCount > 0
+              ) {
                 swal("Booking Canceled", "", "success");
                 fetchAgain();
               }

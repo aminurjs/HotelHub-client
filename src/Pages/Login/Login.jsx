@@ -5,12 +5,15 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet";
+import useAxios from "../../Hooks/useAxios";
+import swal from "sweetalert";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { googleLogin, login } = useAuth();
   const location = useLocation();
+  const axios = useAxios();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -19,7 +22,6 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
 
     if (password.length < 6) {
       toast.error(" Password should have at least  6 characters", {
@@ -30,7 +32,16 @@ const Login = () => {
 
     login(email, password)
       .then((result) => {
-        console.log(result.user);
+        console.log(result.user.email);
+        const user = { email: result.user.email };
+        axios
+          .post(`/auth/access-token`, user)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            return swal(error.code);
+          });
         toast.success("Successfully Logged in!!", { id: toastId });
         navigate(location?.state ? location.state : "/");
       })
@@ -44,7 +55,15 @@ const Login = () => {
     const toastId = toast.loading("Logging in ...");
     googleLogin()
       .then((result) => {
-        console.log(result.user);
+        const user = { email: result.user.email };
+        axios
+          .post(`/auth/access-token`, user)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            return swal(error.code);
+          });
         toast.success("Successfully Logged in!", { id: toastId });
         navigate(location?.state ? location.state : "/");
       })

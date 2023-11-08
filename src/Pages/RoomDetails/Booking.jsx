@@ -12,7 +12,7 @@ import useAxios from "../../Hooks/useAxios";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
-const Booking = ({ bookingData }) => {
+const Booking = ({ bookingData, fetchAgain }) => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [startDate, setStartDate] = useState("");
@@ -46,10 +46,13 @@ const Booking = ({ bookingData }) => {
   const handleBooking = () => {
     if (user) {
       if (checkBooking) {
-        return swal({ title: "You have already booked!" });
+        return swal({
+          title: "You have already booked!",
+          text: "See Booking Details 'My Booking' page",
+        });
       }
       if (!availability) {
-        return swal({ title: "This Room isn't Available!" });
+        return swal({ title: "This Room is already booked!" });
       }
       if (
         startDate.length === 0 ||
@@ -101,10 +104,14 @@ const Booking = ({ bookingData }) => {
       .then((response) => {
         console.log(response.data);
 
-        if (response.data) {
+        if (
+          response.data.result.acknowledged &&
+          response.data.result2.modifiedCount > 0
+        ) {
           setLoading(false);
           setOpenModal(false);
           refetch();
+          fetchAgain();
           return swal("Successfully Booked", "", "success");
         }
       })
@@ -242,5 +249,6 @@ const Booking = ({ bookingData }) => {
 
 Booking.propTypes = {
   bookingData: PropTypes.object,
+  fetchAgain: PropTypes.func,
 };
 export default Booking;

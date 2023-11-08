@@ -5,11 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import swal from "sweetalert";
+import useAxios from "../../Hooks/useAxios";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, updateUser, googleLogin } = useAuth();
   const navigate = useNavigate();
+  const axios = useAxios();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -31,7 +34,15 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = { email: result.user.email };
+        axios
+          .post(`/auth/access-token`, user)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            return swal(error.code);
+          });
         updateUser(name, image).then(() => {
           // Profile updated!
           toast.success("Successfully Registered!", { id: toastId });
@@ -48,7 +59,15 @@ const Register = () => {
     const toastId = toast.loading("Signing in ...");
     googleLogin()
       .then((result) => {
-        console.log(result.user);
+        const user = { email: result.user.email };
+        axios
+          .post(`/auth/access-token`, user)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            return swal(error.message);
+          });
         toast.success("Successfully Logged in!", { id: toastId });
         navigate(location?.state ? location.state : "/");
       })
