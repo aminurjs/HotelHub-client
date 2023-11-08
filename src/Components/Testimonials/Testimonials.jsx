@@ -7,9 +7,15 @@ import { useQuery } from "@tanstack/react-query";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Testimonials = () => {
   const axios = useAxios();
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   const getTestimonials = async () => {
     const res = await axios.get("/testimonials");
@@ -26,7 +32,11 @@ const Testimonials = () => {
       <div className="py-20 px-5 hidden md:block max-w-7xl mx-auto">
         <div className="container mx-auto bg-dark-03 p-1">
           <div className=" bg-white p-10 flex items-center flex-col md:flex-row gap-10">
-            <div className="md:w-1/2 lg:w-1/3">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              className="md:w-1/2 lg:w-1/3"
+            >
               <h3 className="text-dark-03 tracking-[5px] mb-3">TESTIMONIALS</h3>
               <h2 className="text-dark-01 text-4xl font-medium mb-2">
                 Our Clients Reviews
@@ -38,7 +48,11 @@ const Testimonials = () => {
               </p>
             </div>
 
-            <div className="w-2/3 hidden lg:block">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1700"
+              className="w-2/3 hidden lg:block"
+            >
               <Swiper
                 // install Swiper modules
                 modules={[Navigation, Pagination, Autoplay]}
@@ -112,7 +126,11 @@ const Testimonials = () => {
               </Swiper>
             </div>
 
-            <div className="w-[400px] sm:w-full md:w-1/2 block lg:hidden">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1700"
+              className="w-[400px] sm:w-full md:w-1/2 block lg:hidden"
+            >
               <Swiper
                 modules={[Navigation, Autoplay, Pagination]}
                 spaceBetween={50}

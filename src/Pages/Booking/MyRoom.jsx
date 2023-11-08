@@ -204,7 +204,7 @@ const MyRoom = ({ room, fetchAgain }) => {
                 </div>
               </Modal.Body>
               <Modal.Footer>
-                <div className="text-right flex justify-end w-full py-2 px-5">
+                <div className="text-right flex justify-end w-full py-3 px-5">
                   <button
                     onClick={() => setOpenModal(false)}
                     className="py-2 px-4 md:px-6 text-dark-03 bg-transparent border border-dark-03 rounded uppercase font-medium active:scale-95"

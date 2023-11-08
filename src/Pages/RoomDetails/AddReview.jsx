@@ -63,7 +63,7 @@ const AddReview = ({ _id, fetchAgain }) => {
           setLoading(false);
           setOpenModal(false);
           fetchAgain();
-          return swal("Posted Successfully");
+          return swal({ title: "Posted Successfully" });
         }
       })
       .catch((error) => {

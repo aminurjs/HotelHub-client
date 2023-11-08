@@ -1,13 +1,23 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { RiHotelFill } from "react-icons/ri";
 
 const About = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="max-w-7xl mx-auto mt-20 mb-28 flex gap-12 py-16 items-center px-5 flex-col md:flex-row">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      className="max-w-7xl mx-auto mt-20 mb-28 flex gap-12 py-16 items-center px-5 flex-col md:flex-row"
+    >
       <div className="border border-dark-03 p-3 relative w-full md:w-2/5 lg:w-1/2 mr-12 ml-5 md:mr-0">
-        <img src="https://i.ibb.co/9gzVfBt/over-water-villas.jpg" alt="" />
+        <img src="https://i.ibb.co/rM2hN2k/luxery.webp" alt="" />
         <div className="absolute -bottom-10 -right-10 w-56 md:w-60 lg:w-80 p-3 bg-white">
-          <img src="https://i.ibb.co/G0jbBjv/exteriors-view.jpg" alt="" />
+          <img src="https://i.ibb.co/8rZJj61/jpg.webp" alt="" />
         </div>
       </div>
       <div className="w-full md:w-3/5 lg:w-1/2 mt-6">

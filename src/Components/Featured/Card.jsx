@@ -1,14 +1,24 @@
 import { FaRulerCombined, FaUserFriends } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Card = ({ card }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const navigate = useNavigate();
   const handleDetails = () => {
     navigate(`/room/details/${card._id}`);
   };
   return (
-    <div key={card.id} className="bg-white rounded ">
+    <div
+      data-aos="fade-down"
+      data-aos-duration="1500"
+      className="bg-white rounded "
+    >
       <img className="rounded-t" src={card.image} alt="" />
       <div className="p-5">
         <div className="pb-3 mb-4 border-b border-gray-200">

@@ -7,11 +7,21 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="bg-[#222935] pt-20 pb-5">
-      <div className="max-w-7xl mx-auto px-5">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="1500"
+        className="max-w-7xl mx-auto px-5"
+      >
         <div className="px-5 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 border-b pb-6 border-gray-600">
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link
