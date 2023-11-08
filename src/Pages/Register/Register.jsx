@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -59,6 +60,9 @@ const Register = () => {
 
   return (
     <div className="bg-transparent ">
+      <Helmet>
+        <title>Register - HotelHub</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto p-10">
         <div className="bg-white  rounded shadow p-10 flex items-center border border-gray-200">
           <div className="w-1/2 hidden md:block pr-10">

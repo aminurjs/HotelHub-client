@@ -1,36 +1,23 @@
 import Room from "./Room";
 import useAxios from "../../Hooks/useAxios";
-import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
 
 const Rooms = () => {
+  const [sortValue, setSortValue] = useState(0);
+  const [cards, setCards] = useState([]);
   const axios = useAxios();
 
-  const getRooms = async () => {
-    const res = await axios.get("/rooms");
-    return res.data;
-  };
+  useEffect(() => {
+    const getRooms = async () => {
+      const res = await axios.get(`/rooms?sort=${sortValue}`);
+      setCards(res.data);
+    };
+    getRooms();
+  }, [axios, sortValue]);
 
-  const { data: cards } = useQuery({
-    queryKey: ["rooms"],
-    queryFn: getRooms,
-  });
-
-  const handleSort = (e) => {
-    const val = e.target.value;
-    console.log(val);
-    // if (val == "dfl") {
-    //   setDfl(!dfl);
-    //   console.log(cards);
-    // }
-    // if (val == "htl") {
-    //   setCards(cards.sort((a, b) => b.price - a.price));
-    //   console.log(cards);
-    // }
-    // if (val == "lth") {
-    //   setCards(cards.sort((a, b) => b.price - a.price));
-    //   console.log(cards);
-    // }
+  const handleSortChange = (val) => {
+    setSortValue(val);
   };
 
   return (
@@ -65,16 +52,16 @@ const Rooms = () => {
           <h2 className=" text-dark-01">
             Sort :{" "}
             <select
-              onChange={handleSort}
+              onChange={(e) => handleSortChange(e.target.value)}
               className="ml-2 py-1 px-2 border border-gray-300 rounded outline-none"
             >
-              <option value="dfl">Default</option>
-              <option value="htl">Price{"(High - Low)"}</option>
-              <option value="lth">Price{"(Low - High)"}</option>
+              <option value="0">Default</option>
+              <option value="-1">Price{"(High - Low)"}</option>
+              <option value="1">Price{"(Low - High)"}</option>
             </select>
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 duration-500">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 duration-500 transition-all">
           {cards?.map((card) => (
             <Room key={card._id} card={card} />
           ))}
