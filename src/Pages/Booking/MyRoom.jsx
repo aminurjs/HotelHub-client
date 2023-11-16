@@ -8,6 +8,7 @@ import swal from "sweetalert";
 import { useState } from "react";
 import { Modal } from "flowbite-react";
 import moment from "moment/moment";
+import AddReview from "./AddReview";
 
 const MyRoom = ({ room, fetchAgain }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -230,10 +231,13 @@ const MyRoom = ({ room, fetchAgain }) => {
           </div>
         </div>
         <div>
+          <AddReview _id={id} />
+        </div>
+        <div>
           <button
             onClick={handleCancelBooking}
-            title="You can only cancel up to one day before check-in date."
-            className=" bg-red-500 rounded-sm active:scale-95 px-3 py-1 text-white text-sm lg:text-base font-medium duration-300"
+            data-tip="You can only cancel up to one day before check-in date."
+            className="tooltip bg-red-500 rounded-sm active:scale-95 px-3 py-1 text-white text-sm lg:text-base font-medium duration-300"
           >
             Cancel Booking
           </button>
