@@ -13,13 +13,26 @@ const MyBooking = () => {
     return res.data;
   };
 
-  const { data: bookedRooms, refetch } = useQuery({
+  const {
+    data: bookedRooms,
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["bookedByUser"],
     queryFn: getBookedRooms,
   });
   const fetchAgain = () => {
     refetch();
   };
+  if (isLoading) {
+    return (
+      <div>
+        <div className="text-center mt-40 mb-80">
+          <span className="loading loading-spinner text-dark-03 loading-lg"></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       <Helmet>

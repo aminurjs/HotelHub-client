@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Rooms = () => {
   const [sortValue, setSortValue] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
   const axios = useAxios();
 
@@ -12,6 +13,7 @@ const Rooms = () => {
     const getRooms = async () => {
       const res = await axios.get(`/rooms?sort=${sortValue}`);
       setCards(res.data);
+      setIsLoading(false);
     };
     getRooms();
   }, [axios, sortValue]);
@@ -61,10 +63,20 @@ const Rooms = () => {
             </select>
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 duration-500 transition-all">
-          {cards?.map((card) => (
-            <Room key={card._id} card={card} />
-          ))}
+        <div>
+          {isLoading ? (
+            <div>
+              <div className="text-center mt-40 mb-80">
+                <span className="loading loading-spinner text-dark-03 loading-lg"></span>
+              </div>
+            </div>
+          ) : (
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 duration-500 transition-all">
+              {cards?.map((card) => (
+                <Room key={card._id} card={card} isLoading={isLoading} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -10,10 +10,19 @@ const Featured = () => {
     return res.data;
   };
 
-  const { data: cards } = useQuery({
+  const { data: cards, isLoading } = useQuery({
     queryKey: ["featured"],
     queryFn: getFeatured,
   });
+  if (isLoading) {
+    return (
+      <div>
+        <div className="text-center mt-40 mb-80">
+          <span className="loading loading-spinner text-dark-03 loading-lg"></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="bg-base-200 py-20 px-5">
       <h1 className="text-4xl md:text-6xl text-dark-01 font-bold  mb-3 text-center">

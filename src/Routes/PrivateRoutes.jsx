@@ -10,7 +10,7 @@ const PrivateRoutes = ({ children }) => {
     return (
       <div>
         <div className="text-center mt-40 mb-80">
-          <span className="loading loading-spinner text-primary loading-lg"></span>
+          <span className="loading loading-spinner text-dark-03 loading-lg"></span>
         </div>
       </div>
     );

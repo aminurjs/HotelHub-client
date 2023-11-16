@@ -16,7 +16,7 @@ const Footer = () => {
     Aos.init();
   }, []);
   return (
-    <div className="bg-[#222935] pt-20 pb-5">
+    <div className="bg-[#222935] pt-20 pb-5 -mb-6">
       <div
         data-aos="fade-down"
         data-aos-duration="1500"

@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const Review = ({ review }) => {
   return (
@@ -15,9 +17,12 @@ const Review = ({ review }) => {
         />
 
         <div>
-          <h3 className="text-dark-01 text-xl font-semibold">{review?.name}</h3>
-          <p className="text-dark-02 text-sm my-1">Rating: {review?.rating}</p>
-          <p className="text-dark-02">{review?.description}</p>
+          <h3 className="text-dark-01 text-xl font-semibold mb-2">
+            {review?.name}
+          </h3>
+
+          <Rating style={{ maxWidth: 100 }} value={review?.rating} readOnly />
+          <p className="text-dark-02 mt-1">{review?.description}</p>
         </div>
       </div>
     </div>

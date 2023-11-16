@@ -9,7 +9,7 @@ import "./swal.css";
 import { AiOutlineCalendar } from "react-icons/ai";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const Booking = ({ bookingData, fetchAgain }) => {
@@ -20,6 +20,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
   const [bookingDays, setBookingDays] = useState("");
   const axios = useAxios();
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
 
   const { _id, title, type, size, availability, capacity, price, image } =
@@ -76,9 +77,9 @@ const Booking = ({ bookingData, fetchAgain }) => {
         title: "Please Login First",
         buttons: true,
         dangerMode: true,
-      }).then((willDelete) => {
-        if (willDelete) {
-          navigate("/login");
+      }).then((isConfirm) => {
+        if (isConfirm) {
+          navigate("/login", { state: location?.pathname });
         }
       });
     }

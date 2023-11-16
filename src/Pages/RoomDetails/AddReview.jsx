@@ -5,12 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
 import useAuth from "../../Hooks/useAuth";
 import swal from "sweetalert";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Rating } from "@smastrom/react-rating";
 
 const AddReview = ({ _id, fetchAgain }) => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
   const axios = useAxios();
 
@@ -37,17 +39,17 @@ const AddReview = ({ _id, fetchAgain }) => {
         title: "Please Login First",
         buttons: true,
         dangerMode: true,
-      }).then((willDelete) => {
-        if (willDelete) {
-          navigate("/login");
+      }).then((confirm) => {
+        if (confirm) {
+          navigate("/login", { state: location?.pathname });
         }
       });
     }
   };
+  const [rating, setRating] = useState(0);
   const handleAddReview = (e) => {
     setLoading(true);
     e.preventDefault();
-    const rating = e.target.rating.value;
     const comment = e.target.comment.value;
     const review = {
       rating,
@@ -63,6 +65,7 @@ const AddReview = ({ _id, fetchAgain }) => {
           setLoading(false);
           setOpenModal(false);
           fetchAgain();
+          setRating(0);
           return swal({ title: "Posted Successfully" });
         }
       })
@@ -70,6 +73,7 @@ const AddReview = ({ _id, fetchAgain }) => {
         console.log(error);
         setLoading(false);
         setOpenModal(false);
+        setRating(0);
         return swal(error.code);
       });
   };
@@ -99,13 +103,11 @@ const AddReview = ({ _id, fetchAgain }) => {
                   >
                     Rating:
                   </label>
-                  <input
-                    type="number"
-                    placeholder="1-5"
-                    id="rating"
-                    name="rating"
-                    className="py-1 block w-full px-2 border border-gray-300 rounded outline-none"
-                    required
+                  <Rating
+                    style={{ maxWidth: 180 }}
+                    value={rating}
+                    onChange={setRating}
+                    isRequired
                   />
                 </div>
                 <div className="">

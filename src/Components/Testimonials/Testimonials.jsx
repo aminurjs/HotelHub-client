@@ -62,7 +62,7 @@ const Testimonials = () => {
               >
                 {testimonials?.map((testimonial) => (
                   <SwiperSlide key={testimonial._id}>
-                    <div className="p-5 flex flex-col mr-2 relative mb-6">
+                    <div className="p-5 flex flex-col mr-4 relative mb-6">
                       <div className="flex justify-between items-end">
                         <FaQuoteRight className="text-5xl text-dark-03" />
                         <Rating
@@ -119,7 +119,7 @@ const Testimonials = () => {
                           </h4>
                         </div>
                       </div>
-                      <div className="absolute w-2 bg-base-300 rounded-lg h-4/5 -right-7 top-10"></div>
+                      <div className="absolute w-2 bg-base-300 rounded-lg h-4/5 -right-3 top-10"></div>
                     </div>
                   </SwiperSlide>
                 ))}

@@ -41,7 +41,13 @@ const RoomDetails = () => {
     queryFn: getRoom,
   });
   if (isLoading) {
-    return <div className="text-center mt-10">Loading ...</div>;
+    return (
+      <div>
+        <div className="text-center mt-40 mb-80">
+          <span className="loading loading-spinner text-dark-03 loading-lg"></span>
+        </div>
+      </div>
+    );
   }
   const fetchAgain = () => {
     refetch();
