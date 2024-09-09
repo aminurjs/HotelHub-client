@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+
 import { FaQuoteRight } from "react-icons/fa";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";

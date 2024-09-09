@@ -4,6 +4,17 @@ import "./Navbar.css";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
+export const navLink = [
+  { id: 1, path: "/", name: "Home" },
+  { id: 2, path: "/rooms", name: "Rooms" },
+  { id: 3, path: "/bookings", name: "My Booking" },
+  //  { id: 4, path: "/about-us", name: "About Us" },
+  //  { id: 5, path: "/contact-us", name: "Contact Us" },
+  //  { id: 6, path: "/events", name: "Events" },
+  //  { id: 7, path: "/gallery", name: "Gallery" },
+  //  { id: 8, path: "/faq", name: "FAQ" },
+];
+
 const Navbar = () => {
   const { user, logout } = useAuth();
 
@@ -19,16 +30,6 @@ const Navbar = () => {
       });
   };
 
-  const navLink = [
-    { id: 1, path: "/", name: "Home" },
-    { id: 2, path: "/rooms", name: "Rooms" },
-    { id: 3, path: "/bookings", name: "My Booking" },
-    { id: 4, path: "/about-us", name: "About Us" },
-    { id: 5, path: "/contact-us", name: "Contact Us" },
-    { id: 6, path: "/events", name: "Events" },
-    { id: 7, path: "/gallery", name: "Gallery" },
-    { id: 8, path: "/faq", name: "FAQ" },
-  ];
   return (
     <div className="w-full py-3  bg-base-100 shadow">
       <div className="max-w-7xl mx-auto navbar">
