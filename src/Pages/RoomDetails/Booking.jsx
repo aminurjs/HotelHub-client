@@ -23,8 +23,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
   const location = useLocation();
   const { user } = useAuth();
 
-  const { _id, title, type, size, availability, capacity, price, image } =
-    bookingData;
+  const { _id, title, type, size, availability, capacity, price, image } = bookingData;
   const [totalPrice, setTotalPrice] = useState(price);
   const getBookedRooms = async () => {
     const res = await axios.get(`/booking/${user.email}`);
@@ -55,11 +54,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
       if (!availability) {
         return swal({ title: "This Room is already booked!" });
       }
-      if (
-        startDate.length === 0 ||
-        endDate.length === 0 ||
-        startDate >= endDate
-      ) {
+      if (startDate.length === 0 || endDate.length === 0 || startDate >= endDate) {
         return swal("Please select valid 'Check-in' and 'Check-out' date.");
       }
       if (startDate.length > 0 && endDate.length > 0 && startDate < endDate) {
@@ -99,16 +94,14 @@ const Booking = ({ bookingData, fetchAgain }) => {
       startDate,
       endDate,
       image,
+      status: "pending",
     };
     axios
       .post("/booking", bookingPostData)
       .then((response) => {
         console.log(response.data);
 
-        if (
-          response.data.result.acknowledged &&
-          response.data.result2.modifiedCount > 0
-        ) {
+        if (response.data.result.acknowledged && response.data.result2.modifiedCount > 0) {
           setLoading(false);
           setOpenModal(false);
           refetch();
@@ -128,10 +121,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
       <div className="border-t border-gray-300 pt-2">
         <div className=" mb-5">
           <div className=" mb-2">
-            <label
-              htmlFor="start-date"
-              className="block font-medium text-lg text-dark-01"
-            >
+            <label htmlFor="start-date" className="block font-medium text-lg text-dark-01">
               Check-in Date:
             </label>
             <input
@@ -144,10 +134,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
             />
           </div>
           <div className="">
-            <label
-              htmlFor="end-date"
-              className="block font-medium text-lg text-dark-01"
-            >
+            <label htmlFor="end-date" className="block font-medium text-lg text-dark-01">
               Check-out Date:
             </label>
             <input
@@ -171,9 +158,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
           </div>
           <Modal show={openModal} onClose={() => setOpenModal(false)}>
             <Modal.Header>
-              <span className="text-dark-01 font-semibold text-4xl">
-                {title}
-              </span>
+              <span className="text-dark-01 font-semibold text-4xl">{title}</span>
             </Modal.Header>
             <Modal.Body>
               <div className="p-5">
@@ -213,8 +198,7 @@ const Booking = ({ bookingData, fetchAgain }) => {
                     <IoMdPricetags></IoMdPricetags>
                   </span>
                   <p className="text-xl text-dark-01 font-semibold">
-                    Total Price :{" "}
-                    <span className="text-2xl">${totalPrice}</span>
+                    Total Price : <span className="text-2xl">${totalPrice}</span>
                   </p>
                 </div>
               </div>

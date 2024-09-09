@@ -6,7 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import swal from "sweetalert";
 import { Rating } from "@smastrom/react-rating";
 
-const AddReview = ({ _id }) => {
+const AddReview = ({ _id, canceled = false }) => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
@@ -47,25 +47,21 @@ const AddReview = ({ _id }) => {
     <div>
       <button
         onClick={() => setOpenModal(true)}
-        className="mb-1 bg-dark-03 rounded-sm active:scale-95 px-3 py-1 text-white text-sm lg:text-base font-medium duration-300"
+        disabled={canceled}
+        className={`mb-1 bg-dark-03 rounded-sm active:scale-95 px-3 py-1 text-white text-sm lg:text-base font-medium duration-300 disabled:bg-gray-400`}
       >
         Add a review
       </button>
       <div>
         <Modal show={openModal} onClose={() => setOpenModal(false)}>
           <Modal.Header>
-            <span className="text-dark-01 font-semibold text-4xl">
-              Write a review
-            </span>
+            <span className="text-dark-01 font-semibold text-4xl">Write a review</span>
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={handleAddReview} className="p-5">
               <div className=" mb-2">
                 <div className=" mb-2">
-                  <label
-                    htmlFor="rating"
-                    className="block font-medium text-lg text-dark-01"
-                  >
+                  <label htmlFor="rating" className="block font-medium text-lg text-dark-01">
                     Rating:
                   </label>
                   <Rating
@@ -76,10 +72,7 @@ const AddReview = ({ _id }) => {
                   />
                 </div>
                 <div className="">
-                  <label
-                    htmlFor="comment"
-                    className="block font-medium text-lg text-dark-01"
-                  >
+                  <label htmlFor="comment" className="block font-medium text-lg text-dark-01">
                     Comment:
                   </label>
                   <textarea
@@ -123,6 +116,6 @@ const AddReview = ({ _id }) => {
 };
 AddReview.propTypes = {
   _id: PropTypes.string,
-  fetchAgain: PropTypes.func,
+  canceled: PropTypes.bool,
 };
 export default AddReview;
