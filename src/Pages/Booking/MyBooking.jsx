@@ -76,46 +76,50 @@ const MyBooking = () => {
           </div>
         )}
       </div>
-      <div className="max-w-7xl mx-auto py-12 px-5">
-        {" "}
-        <h2 className="text-2xl text-dark-01 text-center  font-semibold pb-4 mb-5 border-b border-gray-200">
-          My Booking History
-        </h2>
-        <div className="overflow-x-auto">
-          <Table hoverable>
-            <Table.Head className="bg-gray-200 text-center">
-              <Table.HeadCell>Product name</Table.HeadCell>
-              <Table.HeadCell>Check-in</Table.HeadCell>
-              <Table.HeadCell>Check-out</Table.HeadCell>
-              <Table.HeadCell>Price</Table.HeadCell>
-              <Table.HeadCell>Status</Table.HeadCell>
-              <Table.HeadCell>Action</Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y">
-              {inBooked.map((room) => (
-                <Table.Row key={room?._id} className="bg-white h-12 text-center">
-                  <Table.Cell className="whitespace-nowrap font-semibold text-dark-01">
-                    <Link className="hover:underline" to={`/room/details/${room.id}`}>
-                      {room.title}
-                    </Link>
-                  </Table.Cell>
-                  <Table.Cell>{room.startDate}</Table.Cell>
-                  <Table.Cell>{room.endDate}</Table.Cell>
-                  <Table.Cell>${room.price * room.bookingDays}</Table.Cell>
-                  <Table.Cell
-                    className={`${room.status === "canceled" ? "text-red-400" : "text-green-500"}`}
-                  >
-                    {room.status}
-                  </Table.Cell>
-                  <Table.Cell>
-                    <AddReview _id={room.id} canceled={room.status === "canceled"} />
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+      {inBooked.length > 0 && (
+        <div className="max-w-7xl mx-auto py-12 px-5">
+          {" "}
+          <h2 className="text-2xl text-dark-01 text-center  font-semibold pb-4 mb-5 border-b border-gray-200">
+            My Booking History
+          </h2>
+          <div className="overflow-x-auto">
+            <Table hoverable>
+              <Table.Head className="bg-gray-200 text-center">
+                <Table.HeadCell>Product name</Table.HeadCell>
+                <Table.HeadCell>Check-in</Table.HeadCell>
+                <Table.HeadCell>Check-out</Table.HeadCell>
+                <Table.HeadCell>Price</Table.HeadCell>
+                <Table.HeadCell>Status</Table.HeadCell>
+                <Table.HeadCell>Action</Table.HeadCell>
+              </Table.Head>
+              <Table.Body className="divide-y">
+                {inBooked.map((room) => (
+                  <Table.Row key={room?._id} className="bg-white h-12 text-center">
+                    <Table.Cell className="whitespace-nowrap font-semibold text-dark-01">
+                      <Link className="hover:underline" to={`/room/details/${room.id}`}>
+                        {room.title}
+                      </Link>
+                    </Table.Cell>
+                    <Table.Cell>{room.startDate}</Table.Cell>
+                    <Table.Cell>{room.endDate}</Table.Cell>
+                    <Table.Cell>${room.price * room.bookingDays}</Table.Cell>
+                    <Table.Cell
+                      className={`${
+                        room.status === "canceled" ? "text-red-400" : "text-green-500"
+                      }`}
+                    >
+                      {room.status}
+                    </Table.Cell>
+                    <Table.Cell>
+                      <AddReview _id={room.id} canceled={room.status === "canceled"} />
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
