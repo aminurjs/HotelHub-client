@@ -7,6 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet";
 import useAxios from "../../Hooks/useAxios";
 import swal from "sweetalert";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,6 +39,7 @@ const Login = () => {
           .post(`/auth/access-token`, user)
           .then((response) => {
             console.log(response.data);
+            Cookies.set("token", response.data.token);
           })
           .catch((error) => {
             return swal(error.code);
@@ -60,6 +62,7 @@ const Login = () => {
           .post(`/auth/access-token`, user)
           .then((response) => {
             console.log(response.data);
+            Cookies.set("token", response.data.token);
           })
           .catch((error) => {
             return swal(error.code);
@@ -88,9 +91,7 @@ const Login = () => {
               <img src="https://i.ibb.co/Z2VMjFJ/Frame-1.png" alt="" />
             </div>
             <div className=" w-full md:w-1/2 md:pl-10 md:border-l border-gray-300">
-              <h1 className="text-2xl text-dark-01  font-semibold text-center mb-2">
-                Login user
-              </h1>
+              <h1 className="text-2xl text-dark-01  font-semibold text-center mb-2">Login user</h1>
               <p className="text-center text-sm text-gray-600  mb-3">
                 Already have an account?
                 <Link className="text-dark-03 ml-2" to={"/register"}>
@@ -127,9 +128,7 @@ const Login = () => {
                 </div>
               </form>
               <p className="text-center -mb-3.5">
-                <span className="bg-white  z-10 inline-block px-2">
-                  Or login
-                </span>
+                <span className="bg-white  z-10 inline-block px-2">Or login</span>
               </p>
               <div className="w-full h-[1px] bg-stone-300"></div>
               <div className="text-center mt-8 w-4/5 lg:w-3/5 mx-auto">

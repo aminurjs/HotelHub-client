@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import swal from "sweetalert";
 import useAxios from "../../Hooks/useAxios";
+import Cookies from "js-cookie";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,6 +40,7 @@ const Register = () => {
           .post(`/auth/access-token`, user)
           .then((response) => {
             console.log(response.data);
+            Cookies.set("token", response?.data?.token);
           })
           .catch((error) => {
             return swal(error.code);
@@ -64,6 +66,7 @@ const Register = () => {
           .post(`/auth/access-token`, user)
           .then((response) => {
             console.log(response.data);
+            Cookies.set("token", response.data.token);
           })
           .catch((error) => {
             return swal(error.message);

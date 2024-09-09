@@ -3,6 +3,7 @@ import { FaUserAlt } from "react-icons/fa";
 import "./Navbar.css";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 export const navLink = [
   { id: 1, path: "/", name: "Home" },
@@ -23,6 +24,7 @@ const Navbar = () => {
     logout()
       .then(() => {
         toast.success("Successfully Logged out!!", { id: toastId });
+        Cookies.remove("token");
       })
       .catch((error) => {
         console.log(error);
@@ -55,15 +57,8 @@ const Navbar = () => {
           </label>
         </div>
         <div className="flex-1 px-2 mx-2">
-          <Link
-            to={"/"}
-            className="flex gap-3 text-3xl text-dark-01 font-bold items-center"
-          >
-            <img
-              className="w-10"
-              src="https://i.ibb.co/3vFNj7J/logo.png"
-              alt=""
-            />
+          <Link to={"/"} className="flex gap-3 text-3xl text-dark-01 font-bold items-center">
+            <img className="w-10" src="https://i.ibb.co/3vFNj7J/logo.png" alt="" />
             HotelHub
           </Link>
         </div>
